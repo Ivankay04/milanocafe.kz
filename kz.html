@@ -2,6 +2,19 @@
 <html lang="kk">
 <head>
 <meta charset="utf-8">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114254297', 'ym');
+
+    ym(114254297, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114254297" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>«Милано» кафесі, Риддер — пештен шыққан пицца, түскі ас, жеткізу</title>
 <meta name="description" content="Риддердегі «Милано» кафе-пиццериясы, 2005 жылдан бері. Пештен шыққан пицца, жұмыс күндері түскі ас, қала бойынша жеткізу және үстел брондау. 3-шағын аудан, 9.">
@@ -462,7 +475,7 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--paper);borde
       <p><span>Өтінім қалдырыңыз, әкімші қоңырау шалып, брондауды растайды. Сол күнгі кешке қоңырау шалған дұрыс:</span> <a href="#" id="bPhoneLink"></a>.</p>
       <div class="media" data-slot="table"></div>
     </div>
-    <form class="formcard" id="bookForm" novalidate>
+    <form class="formcard ym-hide-content ym-disable-keys" id="bookForm" novalidate>
       <div class="fields">
         <label class="f"><span>Аты</span><input id="bName" autocomplete="name" maxlength="60" required></label>
         <label class="f"><span>Телефон</span><input id="bPhone" type="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __" maxlength="20" required></label>
@@ -519,7 +532,7 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--paper);borde
 
 <div class="cartbar" id="cartbar" hidden><button class="btn" type="button" id="barBtn"><span id="barCount"></span><span id="barSum"></span></button></div>
 <div class="scrim" id="scrim" hidden></div>
-<aside class="panel" id="panel" hidden role="dialog" aria-modal="true">
+<aside class="panel ym-hide-content ym-disable-keys" id="panel" hidden role="dialog" aria-modal="true">
   <header><h3 id="panelTitle"></h3><button class="x" id="closeCart" type="button" aria-label="×">×</button></header>
   <div class="body" id="panelBody"></div>
 </aside>
@@ -545,6 +558,11 @@ const CONFIG = {
   bookingEndpoint: "https://milano-bot-production.up.railway.app/order",
   statusEndpoint: "https://milano-bot-production.up.railway.app/status"     // обед дня и стоп-лист, которые администраторы меняют командами в Telegram
 };
+
+/* ================== ЦЕЛИ ЯНДЕКС.МЕТРИКИ ================== */
+// В Метрике: Цели → Добавить цель → «JavaScript-событие» с этими идентификаторами
+const goal=n=>{try{ym(114254297,"reachGoal",n)}catch(e){}};
+document.addEventListener("click",e=>{const a=e.target.closest("a[href^='tel:']");if(a)goal("phone_click");const w=e.target.closest("a[href*='wa.me']");if(w)goal("whatsapp_click")});
 
 /* ================== ЯЗЫК ================== */
 const LANG = document.documentElement.lang === "kk" ? "kk" : "ru";
@@ -909,7 +927,7 @@ function render(){
 }
 document.addEventListener("click",e=>{
   const inc=e.target.closest("[data-inc]"),dec=e.target.closest("[data-dec]");
-  if(inc){const id=inc.dataset.inc;cart[id]=(cart[id]||0)+1;save();render()}
+  if(inc){const id=inc.dataset.inc;if(!Object.keys(cart).length)goal("cart_add");cart[id]=(cart[id]||0)+1;save();render()}
   if(dec){const id=dec.dataset.dec;cart[id]--;if(cart[id]<=0)delete cart[id];save();render()}
 });
 
@@ -990,6 +1008,7 @@ function renderPanel(){
       if(err){$("#oErr").textContent=err;return}
       const btn=$("#oSubmit");btn.disabled=true;btn.textContent=L("Отправляем…","Жіберіп жатырмыз…");
       result=await send(CONFIG.orderEndpoint,orderPayload());
+      goal(result&&result.ok?"order_sent":"order_whatsapp");
       step="done";renderPanel();
     };
     return;
@@ -1078,6 +1097,7 @@ function copyText(text,el,hint){
     const r=await send(CONFIG.bookingEndpoint,p);
     btn.disabled=false;btn.textContent=label;
     const out=$("#bOut");out.hidden=false;
+    goal(r.ok?"booking_sent":"booking_whatsapp");
     if(r.ok){out.innerHTML=`<div class="okbox">${L(`Заявка № ${esc(r.number)} отправлена. Администратор перезвонит и подтвердит бронь.`,`№ ${esc(r.number)} өтінім жіберілді. Әкімші қоңырау шалып, брондауды растайды.`)}</div>`;$("#bookForm").reset();return}
     const text=["Бронь стола в «Милано»"+(LANG==="kk"?" (каз. версия)":""),`${d}, ${p.time}`,`Гостей: ${p.guests}`,`Повод: ${p.reason}`,`Имя: ${p.name}`,`Телефон: ${p.phone}`,p.note?`Пожелания: ${p.note}`:null].filter(Boolean).join("\n");
     out.innerHTML=`<pre class="msg" id="bMsg">${esc(text)}</pre><div class="sendrow" style="margin-block:12px"><a class="btn" target="_blank" rel="noopener" href="${waHref(text)}">${L("Отправить в WhatsApp","WhatsApp-қа жіберу")}</a><button class="btn ghost" type="button" id="bCopy">${L("Скопировать","Көшіру")}</button></div><p class="hint" id="bHint">${L("Бронь подтверждается, когда администратор ответит.","Әкімші жауап бергенде брондау расталады.")}</p>`;
