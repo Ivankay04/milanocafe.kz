@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="{{CANONICAL}}">
+<link rel="alternate" hreflang="ru" href="https://{{DOMAIN}}/">
+<link rel="alternate" hreflang="kk" href="https://{{DOMAIN}}/kz.html">
+<link rel="alternate" hreflang="x-default" href="https://{{DOMAIN}}/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{OG_TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta property="og:image" content="https://{{DOMAIN}}/assets/og.png">
+<meta property="og:locale" content="{{OG_LOCALE}}">
+<meta name="theme-color" content="#1D3267">
+<link rel="icon" href="{{BASE}}assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{BASE}}assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Кафе «Милано»","url":"https://{{DOMAIN}}/","telephone":"+77770650260","servesCuisine":["Пицца","Европейская кухня"],"acceptsReservations":true,"foundingDate":"2005","image":"https://{{DOMAIN}}/assets/og.png","address":{"@type":"PostalAddress","streetAddress":"3-й микрорайон, 9","addressLocality":"Риддер","addressRegion":"Восточно-Казахстанская область","addressCountry":"KZ"},"geo":{"@type":"GeoCoordinates","latitude":50.329218,"longitude":83.498819},"sameAs":["https://instagram.com/cafemilano_2005"]}
+</script>
+<style>
+:root{
+  --blue:#1D3267; --blue-2:#26407F; --brown:#7B4B2A; --accent:#B8762E;
+  --milk:#F4EDE2; --milk-2:#F8F4EE; --paper:#FFFDF9; --ink:#2E2219; --muted:#6F6458;
+  --line:#E3D9CA; --soft:#EFE6D8; --warn:#9A5B12; --ok:#2F6B3F;
+  --f-d:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-b:"Montserrat","Segoe UI",Roboto,Arial,sans-serif;
+  --r:12px; --head:64px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 56px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--milk-2);color:var(--ink);font:15px/1.6 var(--f-b);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--f-d);color:var(--blue);margin:0;font-weight:600;text-wrap:balance}
+h2{font-size:clamp(28px,4.2vw,42px);line-height:1.12}
+h3{font-size:19px;line-height:1.25}
+p{margin:0}
+a{color:var(--blue)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brown);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:13px 24px;background:var(--blue);color:var(--milk-2);font-weight:600;cursor:pointer;text-decoration:none;font-size:15px;line-height:1.2;transition:background .15s}
+.btn:hover{background:var(--blue-2)}
+.btn.light{background:var(--milk-2);color:var(--blue)}
+.btn.ghost{background:transparent;color:var(--blue);box-shadow:inset 0 0 0 1.5px var(--blue)}
+.btn.ghost-light{background:transparent;color:var(--milk-2);box-shadow:inset 0 0 0 1.5px rgba(248,244,238,.7)}
+.btn.small{padding:8px 15px;font-size:13.5px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.ico{width:1em;height:1em;flex:none}
+.divider{display:flex;align-items:center;gap:10px;color:var(--accent);margin:14px 0}
+.divider::before,.divider::after{content:"";height:1px;background:currentColor;flex:1;max-width:60px;opacity:.7}
+.divider i{width:7px;height:7px;background:currentColor;transform:rotate(45deg)}
+
+.pilot{background:var(--soft);color:var(--muted);font-size:12.5px;text-align:center;padding:7px 16px;padding-top:calc(7px + env(safe-area-inset-top,0px))}
+.pilot b{color:var(--brown);font-weight:600}
+
+header.top{position:sticky;top:0;z-index:30;background:rgba(248,244,238,.96);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:var(--head)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--blue)}
+.logo .m{font-family:var(--f-d);font-weight:700;font-size:34px;line-height:1}
+.logo .t{display:flex;flex-direction:column;line-height:1.05}
+.logo .t b{font-family:var(--f-d);font-weight:600;font-size:19px}
+.logo .t small{font-size:8.5px;letter-spacing:.3em;font-weight:600;margin-top:3px}
+nav.links{display:flex;gap:20px;margin-left:auto;font-size:14px;font-weight:500}
+nav.links a{text-decoration:none;color:var(--ink);white-space:nowrap}
+nav.links a:hover{color:var(--brown)}
+.top .phone{font-weight:600;text-decoration:none;color:var(--blue);white-space:nowrap;font-size:14px;display:flex;align-items:center;gap:6px}
+.lang{font-size:13px;font-weight:600;text-decoration:none;color:var(--brown);border:1px solid var(--line);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.lang:hover{border-color:var(--brown)}
+.cartbtn .n{min-width:20px;height:20px;border-radius:10px;background:var(--brown);color:var(--milk-2);font-size:12px;display:inline-grid;place-items:center;padding:0 5px}
+@media (max-width:1060px){.top .phone span{display:none}}
+@media (max-width:900px){
+  nav.links{position:absolute;left:0;right:0;top:var(--head);background:var(--milk-2);border-bottom:1px solid var(--line);margin:0;padding:8px max(18px,env(safe-area-inset-left,0px));gap:18px;overflow-x:auto;scrollbar-width:none}
+  nav.links::-webkit-scrollbar{display:none}
+  .top .phone{margin-left:auto}
+  .top .wrap{gap:12px}
+  html{scroll-padding-top:calc(var(--head) + 100px)}
+}
+
+/* Медиа: подпись-заглушка всегда снизу; фото/видео ложится сверху и закрывает её, если файл найден */
+.media{position:relative;overflow:hidden;background:var(--blue);border-radius:var(--r)}
+.media>img,.media>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--milk-2);text-align:center;padding:12px}
+.ph::after{content:"";position:absolute;inset:8px;border:1px solid rgba(248,244,238,.28);border-radius:calc(var(--r) - 5px);pointer-events:none}
+.ph svg{width:clamp(34px,22%,64px);height:auto;opacity:.92}
+.ph .code{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.95}
+.ph .spec{font-size:11px;opacity:.72;max-width:26ch;line-height:1.35}
+.tone-brown{background:var(--brown)}
+.tone-blue{background:var(--blue)}
+.tone-sand{background:#B9987A}
+.no-codes .ph .code,.no-codes .ph .spec{display:none}
+
+.hero{position:relative;color:var(--milk-2);min-height:min(82vh,760px);display:flex;align-items:flex-end;padding:0!important}
+.hero .bg{position:absolute;inset:0;border-radius:0}
+.hero .bg .ph{justify-content:flex-start;align-items:flex-end;padding:22px 26px;text-align:right}
+.hero .bg .ph svg{position:absolute;right:-4%;bottom:-8%;width:min(62vw,620px);opacity:.13}
+.hero .bg .ph::after{display:none}
+@media (max-width:900px){.hero .bg .ph{padding-top:58px}}
+@media (max-width:560px){.hero .bg .ph .spec{display:none}}
+.hero .shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(20,14,10,.15) 0%,rgba(20,14,10,.35) 45%,rgba(20,14,10,.72) 100%)}
+.hero .wrap{position:relative;z-index:3;padding-top:80px;padding-bottom:56px;width:100%}
+.hero .eyebrow{color:#E6C9A8}
+.hero h1{color:var(--milk-2);font-size:clamp(40px,7vw,82px);line-height:1;letter-spacing:-.01em;margin-top:14px;max-width:13ch}
+html[lang="kk"] .hero h1{font-size:clamp(36px,6vw,72px);max-width:16ch}
+.hero h1 em{font-style:italic;font-weight:500;color:#EBCDA9}
+.hero .lead{font-size:clamp(15px,1.6vw,18px);max-width:48ch;margin-top:18px;color:rgba(248,244,238,.92)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .open{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:var(--brown);color:var(--milk-2);padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:600}
+
+.ways{margin-top:-1px;background:var(--blue);color:var(--milk-2)}
+.ways .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.way{display:flex;gap:14px;align-items:flex-start;padding:22px 18px;text-decoration:none;color:inherit;border-left:1px solid rgba(248,244,238,.16)}
+.way:first-child{border-left:0;padding-left:0}
+.way svg{width:34px;height:34px;flex:none;stroke:#E6C9A8}
+.way b{display:block;font-family:var(--f-d);font-size:18px;font-weight:600;margin-bottom:2px}
+.way span{font-size:13px;color:#C9D1E8;line-height:1.45;display:block}
+.way:hover b{color:#EBCDA9}
+@media (max-width:900px){.ways .wrap{grid-template-columns:1fr 1fr}.way{border-left:0;padding:16px 0;border-top:1px solid rgba(248,244,238,.16)}.way:nth-child(-n+2){border-top:0}.way:nth-child(2n){padding-left:14px}}
+
+section{padding-block:64px}
+@media (max-width:760px){section{padding-block:44px}}
+.sechead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 32px;margin-bottom:28px}
+.sechead p{color:var(--muted);max-width:50ch}
+
+.lunch{background:var(--milk)}
+.lunch .layout{display:grid;grid-template-columns:1fr 1.25fr;gap:36px;align-items:stretch}
+.lunch .media{min-height:320px}
+.today{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r);background:var(--paper);margin-bottom:16px}
+.today div{padding:14px 16px;border-left:1px solid var(--line);min-width:0}
+.today div:first-child{border-left:0}
+.today small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--brown);font-weight:600;margin-bottom:3px}
+.today b{font-family:var(--f-d);font-weight:500;font-size:17px;color:var(--ink);line-height:1.3;display:block}
+.combos{display:grid;gap:10px}
+.combo{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.combo h3{font-size:18px}
+.combo p{grid-column:1;color:var(--muted);font-size:13.5px}
+.combo .side{grid-row:1/3;grid-column:2;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.lunchnote{font-size:13px;color:var(--muted);margin-top:14px}
+@media (max-width:900px){.lunch .layout{grid-template-columns:1fr}.lunch .media{min-height:0;aspect-ratio:4/3}}
+@media (max-width:560px){.today{grid-template-columns:1fr}.today div{border-left:0;border-top:1px solid var(--line)}.today div:first-child{border-top:0}}
+
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin-bottom:22px;position:sticky;top:var(--head);z-index:15;background:var(--milk-2);scrollbar-width:none;border-bottom:1px solid var(--line)}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 15px;font-size:13.5px;font-weight:500;cursor:pointer;white-space:nowrap}
+.tabs button[aria-pressed="true"]{background:var(--blue);color:var(--milk-2);border-color:var(--blue)}
+@media (max-width:900px){.tabs{top:calc(var(--head) + 41px)}}
+.catblock{margin-bottom:44px}
+.cathead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:16px}
+.cathead h3{font-size:26px}
+.cathead span{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.card .media{border-radius:0;aspect-ratio:1/1}
+.card .body{padding:14px 15px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card .nm{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.card h3{font-size:18px}
+.card p{font-size:13px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:4px;min-height:36px}
+.card.off .media{filter:grayscale(.7);opacity:.6}
+.badge{font-size:10.5px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--brown);white-space:nowrap}
+.badge.hall,.badge.off{color:var(--warn)}
+.price{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
+.price small{display:block;font-weight:500;color:var(--muted);font-size:11.5px;line-height:1.2}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
+.qty button{width:34px;height:34px;border:0;background:transparent;cursor:pointer;font-size:18px;color:var(--blue);line-height:1}
+.qty span{min-width:20px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .card .body{padding:10px 11px 12px;gap:5px}
+  .card h3{font-size:15.5px}
+  .card p{font-size:12px;-webkit-line-clamp:2}
+  .card .row{flex-direction:column;align-items:stretch;gap:8px}
+  .card .row .btn{width:100%}
+  .card .row .qty{justify-content:space-between}
+}
+.listcat{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px;align-items:start}
+.listcat .media{aspect-ratio:4/3}
+.rows{background:var(--paper);border:1px solid var(--line);border-radius:var(--r)}
+.lrow{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:11px 16px;border-top:1px solid var(--line)}
+.lrow:first-child{border-top:0}
+.lrow b{font-weight:600;font-size:14.5px}
+.lrow small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+@media (max-width:760px){.listcat{grid-template-columns:1fr}.lrow{grid-template-columns:1fr auto;padding:10px 12px}.lrow .price{grid-column:1;grid-row:2;font-size:14px}.lrow>span:last-child{grid-column:2;grid-row:1/3}}
+
+.sets{background:var(--brown);color:var(--milk-2)}
+.sets h2,.sets h3{color:var(--milk-2)}
+.sets .eyebrow{color:#EBCDA9}
+.sets .sechead p{color:#E9D9C6}
+.sets .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sets .card{background:rgba(248,244,238,.06);border-color:rgba(248,244,238,.2)}
+.sets .card .media{aspect-ratio:4/3}
+.sets .card p{color:#E9D9C6;-webkit-line-clamp:unset}
+.sets .price{color:var(--milk-2);font-size:18px}
+.sets .btn{background:var(--milk-2);color:var(--brown)}
+.sets .qty{background:var(--milk-2);border-color:transparent}
+.sets .qty button,.sets .qty span{color:var(--brown)}
+@media (max-width:900px){.sets .grid{grid-template-columns:1fr}.sets .card{flex-direction:row}.sets .card .media{width:38%;aspect-ratio:auto;min-height:150px}}
+@media (max-width:560px){.sets .card .row{flex-direction:row;align-items:center}.sets .card .row .btn{width:auto}}
+
+.process .vids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.process figure{margin:0}
+.process .media{aspect-ratio:4/5}
+.process figcaption{margin-top:12px}
+.process figcaption b{font-family:var(--f-d);font-size:19px;color:var(--blue);display:block;font-weight:600}
+.process figcaption span{font-size:13.5px;color:var(--muted)}
+@media (max-width:760px){.process .vids{grid-template-columns:repeat(3,72%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin-right:-18px;padding-right:18px}.process figure{scroll-snap-align:start}}
+
+.hall{background:var(--milk)}
+.gallery{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:12px;height:min(560px,70vw)}
+.gallery .media:first-child{grid-row:1/3}
+.gallery .media:nth-child(4){grid-column:2/4}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}.gallery .media{aspect-ratio:1}.gallery .media:first-child{grid-column:1/3;grid-row:auto;aspect-ratio:4/3}.gallery .media:nth-child(4){grid-column:1/3;aspect-ratio:16/9}}
+
+.about .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.about .lede{font-size:18px;margin-top:16px;max-width:42ch}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:22px 26px}
+.fact{display:flex;gap:14px}
+.fact .md{width:52px;height:52px;border-radius:50%;background:var(--blue);display:grid;place-items:center;flex:none;box-shadow:inset 0 0 0 3px var(--blue),inset 0 0 0 4px rgba(248,244,238,.6)}
+.fact:nth-child(2n) .md{background:var(--brown);box-shadow:inset 0 0 0 3px var(--brown),inset 0 0 0 4px rgba(248,244,238,.6)}
+.fact .md svg{width:26px;height:26px;stroke:var(--milk-2)}
+.fact b{font-family:var(--f-d);color:var(--blue);font-size:17.5px;font-weight:600;display:block;margin-bottom:2px}
+.fact p{color:var(--muted);font-size:13.5px}
+@media (max-width:900px){.about .wrap{grid-template-columns:1fr;gap:28px}}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+
+.how{background:var(--blue);color:var(--milk-2)}
+.how h2{color:var(--milk-2)}
+.how .eyebrow{color:#E6C9A8}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:s}
+.step{border-top:1px solid rgba(248,244,238,.3);padding-top:16px}
+.step::before{counter-increment:s;content:counter(s);font-family:var(--f-d);font-style:italic;font-size:40px;line-height:1;color:#EBCDA9;display:block;margin-bottom:10px}
+.step b{display:block;font-family:var(--f-d);font-size:18px;font-weight:600;margin-bottom:4px}
+.step p{font-size:13.5px;color:#C9D1E8}
+.how .terms{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 26px;font-size:13.5px;color:#DCE2F2}
+.how .terms span::before{content:"";display:inline-block;width:6px;height:6px;transform:rotate(45deg);background:#B8762E;margin-right:9px;vertical-align:middle}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+.formcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px}
+.fields .full{grid-column:1/-1}
+label.f{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+label.f input,label.f select,label.f textarea{border:1px solid var(--line);background:var(--milk-2);border-radius:9px;padding:11px 12px;font-size:15px;color:var(--ink);width:100%;min-width:0;font-weight:400}
+label.f textarea{resize:vertical;min-height:70px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:3px;background:var(--milk-2)}
+.seg label{flex:1;text-align:center;padding:8px 10px;border-radius:999px;cursor:pointer;font-size:14px;font-weight:500;position:relative}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:has(input:checked){background:var(--blue);color:var(--milk-2)}
+.seg label:has(input:disabled){opacity:.45;cursor:not-allowed}
+.seg label:has(input:focus-visible){outline:2px solid var(--accent)}
+.err{color:var(--warn);font-size:13px;min-height:1em}
+.consent{font-size:12px;color:var(--muted)}
+.consent a{color:inherit}
+.okbox{background:#EEF4EC;border:1px solid #CFE0CA;color:var(--ok);border-radius:10px;padding:14px 16px;font-size:14px}
+@media (max-width:560px){.fields{grid-template-columns:1fr}}
+.booking .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:start}
+.booking .side p{color:var(--muted);margin-top:14px;max-width:42ch}
+.booking .side .media{margin-top:24px;aspect-ratio:4/3}
+@media (max-width:900px){.booking .wrap{grid-template-columns:1fr;gap:22px}.booking .side .media{display:none}}
+
+.contacts{background:var(--milk)}
+.contacts .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:36px;align-items:stretch}
+.clist{display:grid;gap:18px;align-content:start}
+.clist>div{display:flex;gap:14px}
+.clist svg{width:24px;height:24px;stroke:var(--brown);flex:none;margin-top:2px}
+.clist b{display:block;font-family:var(--f-d);font-size:18px;color:var(--blue);font-weight:600}
+.clist p,.clist a{font-size:14.5px;color:var(--ink)}
+.map{position:relative;border-radius:var(--r);overflow:hidden;min-height:340px;background:#E6DAC7}
+.map .grid-bg{position:absolute;inset:0;background:
+  linear-gradient(90deg,transparent 0 46%,#F7F1E7 46% 49%,transparent 49%),
+  linear-gradient(0deg,transparent 0 58%,#F7F1E7 58% 61%,transparent 61%),
+  linear-gradient(90deg,transparent 0 12%,#F2EADF 12% 13.5%,transparent 13.5% 78%,#F2EADF 78% 79.5%,transparent 79.5%),
+  linear-gradient(0deg,transparent 0 22%,#F2EADF 22% 23.5%,transparent 23.5% 84%,#F2EADF 84% 85.5%,transparent 85.5%),#E6DAC7}
+.map>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.map .pin span{width:46px;height:46px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--blue);display:grid;place-items:center;box-shadow:0 6px 14px rgba(29,50,103,.35)}
+.map .pin span b{transform:rotate(45deg);font-family:var(--f-d);color:var(--milk-2);font-size:22px}
+.map .card-addr{position:absolute;left:16px;right:16px;bottom:16px;background:var(--paper);border-radius:10px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;box-shadow:0 6px 18px rgba(46,34,25,.12)}
+.map .card-addr b{font-family:var(--f-d);color:var(--blue);font-size:16px}
+@media (max-width:900px){.contacts .wrap{grid-template-columns:1fr}}
+
+footer{background:#18264E;color:#C9D1E8;padding-block:44px calc(110px + env(safe-area-inset-bottom,0px));font-size:13.5px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}
+footer .logo{color:var(--milk-2)}
+footer h4{font-family:var(--f-d);color:var(--milk-2);font-size:16px;margin:0 0 8px;font-weight:600}
+footer a{color:#DCE2F2;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .copy{grid-column:1/-1;border-top:1px solid rgba(248,244,238,.14);padding-top:18px;font-size:12px;color:#93A0C4;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+footer .since{letter-spacing:.3em;font-size:10px;font-weight:600;color:#93A0C4;margin-top:10px}
+@media (max-width:900px){footer .wrap{grid-template-columns:1fr 1fr}footer .wrap>div:first-child{grid-column:1/-1}}
+
+.cartbar{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:12px max(16px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px));pointer-events:none}
+.cartbar .btn{pointer-events:auto;width:min(520px,100%);margin:0 auto;display:flex;justify-content:space-between;box-shadow:0 10px 28px rgba(20,25,45,.32);padding:15px 22px}
+.scrim{position:fixed;inset:0;background:rgba(10,14,28,.45);z-index:40}
+.panel{position:fixed;z-index:41;right:0;top:0;bottom:0;width:min(470px,100%);background:var(--milk-2);display:flex;flex-direction:column;box-shadow:-10px 0 30px rgba(10,14,28,.25);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.panel header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line)}
+.panel .body{overflow-y:auto;padding:16px 18px 22px;flex:1;display:flex;flex-direction:column;gap:16px}
+.x{border:0;background:transparent;font-size:28px;line-height:1;cursor:pointer;color:var(--muted);width:38px;height:38px}
+.lines{display:flex;flex-direction:column;gap:10px}
+.line{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;font-size:14px}
+.line .nm{min-width:0}
+.sum{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:4px;font-size:14px}
+.sum div{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.sum .total{font-size:18px;font-weight:700;color:var(--blue)}
+.hint{font-size:13px;color:var(--muted)}
+.hint.warn{color:var(--warn)}
+pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px;font-family:var(--f-b);font-size:13px;margin:0;max-height:240px;overflow:auto}
+.sendrow{display:flex;flex-wrap:wrap;gap:10px}
+.empty{color:var(--muted);text-align:center;padding:30px 0}
+.done-n{font-family:var(--f-d);font-size:30px;color:var(--blue)}
+@media (prefers-reduced-motion:no-preference){.panel{animation:slide .22s ease-out}@keyframes slide{from{transform:translateX(30px);opacity:.6}}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<div class="pilot" id="pilot" hidden data-kk='<b>Пилоттық нұсқа.</b> Бағалар мен тағам құрамы нақтыланып жатыр, фото орнында не түсіру керегі жазылған.'><b>Пилотная версия.</b> Цены и состав блюд уточняются, на месте фото — подписи, что снимать.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Милано">
+      <span class="m">M</span><span class="t"><b>Милано</b><small>SINCE 2005</small></span>
+    </a>
+    <nav class="links">
+      <a href="#menu" data-kk='Мәзір'>Меню</a><a href="#lunch" data-kk='Түскі ас'>Обеды</a><a href="#sets" data-kk='Жиынтықтар'>Наборы</a><a href="#booking" data-kk='Брондау'>Бронь</a><a href="#about" data-kk='Кафе туралы'>О кафе</a><a href="#contacts" data-kk='Байланыс'>Контакты</a>
+    </nav>
+    <a class="phone" id="hPhone" href="#"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M14 6h6l3 10-5 3a24 24 0 0011 11l3-5 10 3v6a4 4 0 01-4 4C22 38 10 26 10 10a4 4 0 014-4z"/></svg><span></span></a>
+    <a class="lang" href="{{ALT_URL}}" hreflang="{{ALT_LANG}}" lang="{{ALT_LANG}}">{{ALT_LABEL}}</a>
+    <button class="btn small cartbtn" id="openCart" type="button"><span data-kk='Себет'>Корзина</span> <span class="n" id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="bg media" data-slot="hero"></div>
+  <div class="shade"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-kk='Кафе-пиццерия · Риддер'>Кафе-пиццерия · Риддер</div>
+    <h1 data-kk='Пештен шыққан пицца <em>және үй тағамдары</em>'>Пицца из печи <em>и домашняя кухня</em></h1>
+    <p class="lead" data-kk='Бір тәулік суықта піскен ашытқылы қамыр, өзіміз дайындайтын қызанақ тұздығы, моцарелла. Сорпалар, ыстық тағамдар және жұмыс күндері түскі ас. Қала бойынша жеткізу.'>Дрожжевое тесто с суточной расстойкой, томатный соус собственного приготовления, моцарелла. Супы, горячее и обеды по будням. Доставка по городу.</p>
+    <div class="ctas">
+      <a class="btn light" href="#menu" data-kk='Жеткізуге тапсырыс беру'>Заказать доставку</a>
+      <a class="btn ghost-light" href="#booking" data-kk='Үстел брондау'>Забронировать стол</a>
+    </div>
+    <div class="open" id="openBadge" hidden></div>
+  </div>
+</section>
+
+<div class="ways">
+  <div class="wrap">
+    <a class="way" href="#menu"><svg viewBox="0 0 48 48" fill="none" stroke-width="2" data-icon="box"></svg><div><b data-kk='Жеткізу'>Доставка</b><span data-kk='Риддер бойынша, Kaspi арқылы немесе қолма-қол төлем'>По Риддеру, оплата Kaspi или наличными</span></div></a>
+    <a class="way" href="#menu"><svg viewBox="0 0 48 48" fill="none" stroke-width="2" data-icon="clock"></svg><div><b data-kk='Белгілі уақытқа'>Ко времени</b><span data-kk='Алдын ала тапсырыс беріңіз, керекті уақытқа дайындаймыз'>Закажите заранее, приготовим к нужному часу</span></div></a>
+    <a class="way" href="#booking"><svg viewBox="0 0 48 48" fill="none" stroke-width="2" data-icon="calendar"></svg><div><b data-kk='Үстел брондау'>Бронь стола</b><span data-kk='Сайтта өтінім, қоңырау арқылы растаймыз'>Заявка на сайте, подтверждаем звонком</span></div></a>
+    <a class="way" href="#lunch"><svg viewBox="0 0 48 48" fill="none" stroke-width="2" data-icon="plate"></svg><div><b data-kk='Түскі ас'>Обеды</b><span data-kk='Жұмыс күндері 12:00–15:00, залда және кеңсеге'>По будням 12:00–15:00, в зале и в офис</span></div></a>
+  </div>
+</div>
+
+<section class="lunch" id="lunch">
+  <div class="wrap">
+    <div class="sechead">
+      <div><div class="eyebrow" data-kk='Жұмыс күндері, 12:00–15:00'>По будням, 12:00–15:00</div><h2 id="lunchTitle">Обед дня</h2></div>
+      <p data-kk='Күн тағамдары апта күндеріне қарай ауысады. Залда түстенуге немесе кеңсеге тапсырыс беруге болады.'>Блюда дня меняются по дням недели. Пообедать можно в зале или заказать в офис.</p>
+    </div>
+    <div class="layout">
+      <div class="media" data-slot="lunch"></div>
+      <div>
+        <div class="today" id="today"></div>
+        <div class="combos" id="combos"></div>
+        <p class="lunchnote" data-kk='Кеңсеге түскі ас: тапсырыс 11:00-ге дейін, 12:00–14:00 аралығында жеткіземіз. 3 түскі астан бастап жеткізу тегін.'>Обеды в офис: заказ до 11:00, привозим с 12:00 до 14:00. От 3 обедов доставка бесплатная.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sechead">
+      <div><div class="eyebrow" data-kk='Мәзір'>Меню</div><h2 data-kk='Таңдаңыз, біз жеткіземіз'>Выбирайте, мы привезём</h2></div>
+      <p data-kk='Ыстық тағамдар гарнирсіз беріледі, гарнирді бөлек қосуға болады. Құймақты тек залда ұсынамыз: жолда дәмі кетеді.'>Горячее подаём без гарнира, его можно добавить отдельно. Блины готовим только для зала: в дороге они теряют вкус.</p>
+    </div>
+    <div class="tabs" id="tabs" role="toolbar"></div>
+    <div id="menuList"></div>
+  </div>
+</section>
+
+<section class="sets" id="sets">
+  <div class="wrap">
+    <div class="sechead">
+      <div><div class="eyebrow" data-kk='Жеткізуге арналған'>Для доставки</div><h2 data-kk='Жиынтықтар'>Наборы</h2></div>
+      <p data-kk='Жиынтыққа пиццаларды өзіңіз таңдайсыз: атауларын тапсырыстағы түсініктемеге жазыңыз.'>Пиццы в набор выбираете сами: напишите названия в комментарии к заказу.</p>
+    </div>
+    <div class="grid" id="setList"></div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="sechead">
+      <div><div class="eyebrow" data-kk='Ас үй'>Кухня</div><h2 data-kk='Біз қалай дайындаймыз'>Как мы готовим</h2></div>
+      <p data-kk='Қамырды, тұздықтарды және котлеттерді өзіміз жасаймыз. Пицца жоғары температурада бірнеше минут піседі.'>Тесто, соусы и котлеты делаем сами. Пицца печётся несколько минут при высокой температуре.</p>
+    </div>
+    <div class="vids" id="vids"></div>
+  </div>
+</section>
+
+<section class="hall">
+  <div class="wrap">
+    <div class="sechead">
+      <div><div class="eyebrow" data-kk='Зал'>Зал</div><h2 data-kk='Бүкіл отбасымен келіңіз'>Приходите всей семьёй</h2></div>
+      <p data-kk='Жаңартылған зал, балалар мәзірі және балалар орындығы. Кешке үстелді алдын ала брондаған дұрыс.'>Обновлённый зал, детское меню и детский стульчик. Стол на вечер лучше бронировать заранее.</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-kk='Кафе туралы'>О кафе</div>
+      <h2 data-kk='«Милано» қайта ашылады'>«Милано» возвращается</h2>
+      <div class="divider"><i></i></div>
+      <p class="lede" data-kk='Кафе Риддерде 2005 жылдан бері жұмыс істейді. Қазір мұнда жаңа мәзір мен жаңа команда, ал дәмдер таныс: тағамдардың бір бөлігін ескі мәзірден қайтардық, қалғаны бұрын жетіспеген классика.'>Кафе работает в Риддере с 2005 года. Сейчас здесь новое меню и новая команда, а вкусы — знакомые: часть блюд вернули из старого меню, остальное — классика, которой не хватало.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="md"><svg viewBox="0 0 48 48" fill="none" stroke-width="2" data-icon="pizza"></svg></div><div><b data-kk='Пицца жаңаша'>Пицца по-новому</b><p data-kk='Ашытқылы қамыр, қызанақ тұздығы, пиццерияға арналған моцарелла. Он екі дәм, соның ішінде фирмалық Миланская мен Риддерская.'>Дрожжевое тесто, соус из томатов, пиццерийная моцарелла. Двенадцать вкусов, включая Миланскую и Риддерскую.</p></div></div>
+      <div class="fact"><div class="md"><svg viewBox="0 0 48 48" fill="none" stroke-width="2" data-icon="chef"></svg></div><div><b data-kk='Тәжірибелі аспазшылар'>Опытные повара</b><p data-kk='Көп жылдық тәжірибесі бар аспазшылар. Таныс тағамдарды тексерілген рецептермен дайындаймыз.'>Повара с многолетним опытом. Знакомые блюда готовим по проверенным рецептам.</p></div></div>
+      <div class="fact"><div class="md"><svg viewBox="0 0 48 48" fill="none" stroke-width="2" data-icon="bowl"></svg></div><div><b data-kk='Үй тағамдары'>Домашняя кухня</b><p data-kk='Борщ, солянка, бефстроганов, «по-барски» ет, котлеттер. Барлығын орнында дайындаймыз.'>Борщ, солянка, бефстроганов, мясо по-барски, котлеты. Всё готовим на месте.</p></div></div>
+      <div class="fact"><div class="md"><svg viewBox="0 0 48 48" fill="none" stroke-width="2" data-icon="kids"></svg></div><div><b data-kk='Отбасыларға'>Для семей</b><p data-kk='Балалар мәзірі, ыңғайлы зал, жұмыс күндері түскі ас және компанияға арналған жиынтықтар.'>Детское меню, удобный зал, обеды по будням и наборы на компанию.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <div class="sechead"><div><div class="eyebrow" data-kk='Онлайн тапсырыс'>Онлайн-заказ</div><h2 data-kk='Қалай тапсырыс беруге болады'>Как заказать</h2></div></div>
+    <div class="steps">
+      <div class="step"><b data-kk='Тапсырысты жинаңыз'>Соберите заказ</b><p data-kk='Тағамдарды себетке қосып, жеткізуді немесе өзіңіз алып кетуді таңдаңыз.'>Добавьте блюда в корзину, выберите доставку или самовывоз.</p></div>
+      <div class="step"><b data-kk='Уақытты көрсетіңіз'>Укажите время</b><p data-kk='Мүмкіндігінше тез немесе керекті сағатқа, басқа күнге де болады.'>Как можно скорее или к нужному часу, в том числе на другой день.</p></div>
+      <div class="step"><b data-kk='Қоңырауды күтіңіз'>Дождитесь звонка</b><p data-kk='Әкімші 10 минут ішінде қоңырау шалып, тапсырысты растайды.'>Администратор перезвонит в течение 10 минут и подтвердит заказ.</p></div>
+      <div class="step"><b data-kk='Ыңғайлы төлеңіз'>Оплатите удобно</b><p id="payStep">Счёт в Kaspi после подтверждения или наличными при получении.</p></div>
+    </div>
+    <div class="terms" id="terms"></div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="side">
+      <div class="eyebrow" data-kk='Үстел брондау'>Бронь стола</div>
+      <h2 data-kk='Үстел брондау'>Забронировать стол</h2>
+      <p><span data-kk='Өтінім қалдырыңыз, әкімші қоңырау шалып, брондауды растайды. Сол күнгі кешке қоңырау шалған дұрыс:'>Оставьте заявку, администратор перезвонит и подтвердит бронь. На тот же вечер лучше позвонить:</span> <a href="#" id="bPhoneLink"></a>.</p>
+      <div class="media" data-slot="table"></div>
+    </div>
+    <form class="formcard" id="bookForm" novalidate>
+      <div class="fields">
+        <label class="f"><span data-kk='Аты'>Имя</span><input id="bName" autocomplete="name" maxlength="60" required></label>
+        <label class="f"><span data-kk='Телефон'>Телефон</span><input id="bPhone" type="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __" maxlength="20" required></label>
+        <label class="f"><span data-kk='Күні'>Дата</span><input id="bDate" type="date" required></label>
+        <label class="f"><span data-kk='Уақыты'>Время</span><input id="bTime" type="time" min="10:00" max="22:00" step="900" value="19:00" required></label>
+        <label class="f"><span data-kk='Қонақтар'>Гостей</span><select id="bGuests"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>7–10</option><option value="Больше 10" data-kk='10-нан көп'>Больше 10</option></select></label>
+        <label class="f"><span data-kk='Себебі'>Повод</span><select id="bReason"><option value="Просто ужин" data-kk='Жай кешкі ас'>Просто ужин</option><option value="День рождения" data-kk='Туған күн'>День рождения</option><option value="Деловая встреча" data-kk='Іскерлік кездесу'>Деловая встреча</option><option value="Семейный обед" data-kk='Отбасылық түскі ас'>Семейный обед</option><option value="Другое" data-kk='Басқа'>Другое</option></select></label>
+        <label class="f full"><span data-kk='Тілектер'>Пожелания</span><textarea id="bNote" maxlength="400" placeholder="Например, стол у окна или детский стульчик" data-kk-ph='Мысалы, терезе жанындағы үстел немесе балалар орындығы'></textarea></label>
+        <label class="hp" aria-hidden="true">Сайт<input id="bHp" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <p class="consent" style="margin-top:10px" data-kk='Өтінімді жібере отырып, сіз брондауды растау үшін атыңыз бен телефоныңызды өңдеуге келісесіз. <a href="{{BASE}}privacy.html">Құпиялылық саясаты</a>'>Отправляя заявку, вы соглашаетесь на обработку имени и телефона для подтверждения брони. <a href="{{BASE}}privacy.html">Политика конфиденциальности</a></p>
+      <p class="err" id="bErr"></p>
+      <div id="bOut" hidden></div>
+      <button class="btn" type="submit" id="bSubmit" style="margin-top:6px" data-kk='Өтінім жіберу'>Отправить заявку</button>
+    </form>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-kk='Байланыс'>Контакты</div>
+      <h2 style="margin-bottom:24px" data-kk='Бізді қалай табуға болады'>Как нас найти</h2>
+      <div class="clist">
+        <div><svg viewBox="0 0 48 48" fill="none" stroke-width="2.4" data-icon="pin"></svg><div><b data-kk='Мекенжай'>Адрес</b><p id="cAddr"></p></div></div>
+        <div><svg viewBox="0 0 48 48" fill="none" stroke-width="2.4" data-icon="phone"></svg><div><b data-kk='Телефон және WhatsApp'>Телефон и WhatsApp</b><p><a id="cPhone" href="#"></a><br><a id="cWa" href="#" target="_blank" rel="noopener" data-kk='WhatsApp-қа жазу'>Написать в WhatsApp</a></p></div></div>
+        <div><svg viewBox="0 0 48 48" fill="none" stroke-width="2.4" data-icon="clock"></svg><div><b data-kk='Жұмыс уақыты'>Часы работы</b><p id="cHours"></p></div></div>
+        <div><svg viewBox="0 0 48 48" fill="none" stroke-width="2.4" data-icon="camera"></svg><div><b>Instagram</b><p><a id="cIg" href="#" target="_blank" rel="noopener"></a></p></div></div>
+      </div>
+    </div>
+    <div class="map" id="map">
+      <div class="grid-bg"></div>
+      <img src="{{BASE}}assets/karta.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <div class="pin"><span><b>M</b></span></div>
+      <div class="card-addr"><div><b>«Милано»</b><br><span class="hint" id="mAddr"></span></div><a class="btn small" id="mLink" href="#" target="_blank" rel="noopener" data-kk='Яндекс Картадан ашу'>Открыть в Яндекс Картах</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top"><span class="m">M</span><span class="t"><b>Милано</b><small>РИДДЕР</small></span></a>
+      <p style="margin-top:14px;max-width:34ch" data-kk='Кафе-пиццерия. Пештен шыққан пицца, үй тағамдары, түскі ас және қала бойынша жеткізу.'>Кафе-пиццерия. Пицца из печи, домашняя кухня, обеды и доставка по городу.</p>
+      <div class="since">SINCE 2005</div>
+    </div>
+    <div><h4 data-kk='Мәзір'>Меню</h4><a href="#cat-pizza" data-kk='Пицца'>Пицца</a><br><a href="#cat-salad" data-kk='Салаттар'>Салаты</a><br><a href="#cat-hot" data-kk='Ыстық тағамдар'>Горячее</a><br><a href="#lunch" data-kk='Түскі ас'>Обеды</a><br><a href="#sets" data-kk='Жиынтықтар'>Наборы</a></div>
+    <div><h4 data-kk='Қонақтарға'>Гостям</h4><a href="#booking" data-kk='Үстел брондау'>Бронь стола</a><br><a href="#menu" data-kk='Жеткізу'>Доставка</a><br><a href="#about" data-kk='Кафе туралы'>О кафе</a><br><a href="{{BASE}}privacy.html" data-kk='Құпиялылық саясаты'>Политика конфиденциальности</a></div>
+    <div><h4 data-kk='Байланыс'>Связь</h4><span id="fPhone"></span><br><span id="fAddr"></span><br><a id="fIg" href="#" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="copy"><span data-kk='© «Милано» кафесі, Риддер'>© Кафе «Милано», Риддер</span><span id="fLegal"></span></div>
+  </div>
+</footer>
+
+<div class="cartbar" id="cartbar" hidden><button class="btn" type="button" id="barBtn"><span id="barCount"></span><span id="barSum"></span></button></div>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="panel" id="panel" hidden role="dialog" aria-modal="true">
+  <header><h3 id="panelTitle"></h3><button class="x" id="closeCart" type="button" aria-label="×">×</button></header>
+  <div class="body" id="panelBody"></div>
+</aside>
+
+<script>
+/* ================== НАСТРОЙКИ ==================
+   Всё, что меняется без программиста, — здесь. Файлы index.html и kz.html собираются из template.html (build.py), правки делаются там. */
+const CONFIG = {
+  pilot: {{PILOT}},                 // полоса «пилотная версия» сверху
+  showPhotoCodes: true,             // подписи «Фото П-01 · что снимать» на местах без фото; false — только иконки
+  openDate: "2026-11-25",           // до этой даты: только заказ ко времени начиная с этой даты, плашка об открытии
+  phone: "+7 777 065 0260",
+  whatsApp: "77770650260",
+  instagram: "cafemilano_2005",
+  address: {ru:"г. Риддер, 3-й микрорайон, 9", kk:"Риддер қ., 3-шағын аудан, 9"},
+  hours: {ru:"Ежедневно 10:00–23:00<br>Обеды: пн–пт 12:00–15:00", kk:"Күн сайын 10:00–23:00<br>Түскі ас: дс–жм 12:00–15:00"},
+  open: "10:00", lastOrder: "22:30",
+  yandexMap: "https://yandex.kz/maps/29498/ridder/house/3_shi_shaghyn_audan_9/bEoYcg5oQUQOQFtqfX9zeH5ibA==/",
+  legal: "ИП [название], ИИН [номер]",
+  minOrder: 3000, deliveryFee: 500, freeFrom: 7000,
+  courierCard: false,               // true, когда у курьера появится терминал
+  orderEndpoint: "{{ORDER_URL}}",      // сервер на Railway; пусто — заказ уходит готовым сообщением в WhatsApp
+  bookingEndpoint: "{{ORDER_URL}}",
+  statusEndpoint: "{{STATUS_URL}}"     // обед дня и стоп-лист, которые администраторы меняют командами в Telegram
+};
+
+/* ================== ЯЗЫК ================== */
+const LANG = document.documentElement.lang === "kk" ? "kk" : "ru";
+const L = (ru, kk) => LANG === "kk" ? kk : ru;
+const BASE = "{{BASE}}";
+
+/* ================== МЕНЮ ================== */
+// [код категории, название, подпись, префикс кода фото, правило съёмки, название kk, подпись kk]
+const CATS = [
+  ["pizza","Пицца","30 см, около 600 г","П","строго сверху, на дереве","Пицца","30 см, шамамен 600 г"],
+  ["salad","Салаты","","С","под 45°, белая тарелка","Салаттар",""],
+  ["soup","Супы","300 мл","Су","под 45°, с паром","Сорпалар","300 мл"],
+  ["hot","Горячее","подаём без гарнира","Г","под 45°, на тарелке","Ыстық тағамдар","гарнирсіз беріледі"],
+  ["snack","Закуски","","З","под 45°, с соусом","Тіскебасарлар",""],
+  ["side","Гарниры","","Гр",null,"Гарнирлер",""],
+  ["blini","Блины","только в зале","Б","под 45°, на тарелке","Құймақтар","тек залда"],
+  ["dessert","Десерты","","Д","под 45°, крупно","Десерттер",""],
+  ["kids","Детское","","Де","сверху, с «лицом»","Балаларға",""],
+  ["drinks","Напитки","","Н",null,"Сусындар",""]
+];
+// [категория, название, состав, выход, цена, метка, только в зале]
+const M = [
+ ["pizza","Маргарита","томатный соус, моцарелла, помидоры, базилик, оливковое масло","30 см",2600],
+ ["pizza","Пепперони","томатный соус, моцарелла, пепперони, орегано","30 см",2990,"часто берут"],
+ ["pizza","Четыре сыра","сливочный соус, моцарелла, твёрдый сыр, брынза, сыр с плесенью","30 см",3290],
+ ["pizza","Миланская","сливочный соус, моцарелла, копчёная курица, шампиньоны, красный лук","30 см",3190,"фирменная"],
+ ["pizza","Нью-Йорк","томатный соус, моцарелла, копчёная колбаса, говядина, шампиньоны, маслины","30 см",3290],
+ ["pizza","Ассорти","томатный соус, моцарелла, ветчина, курица, говядина, пепперони","30 см",3390],
+ ["pizza","Деревенская","сливочный соус, моцарелла, запечённый картофель, копчёная курица, маринованный огурец, жареный лук, укроп","30 см",3090],
+ ["pizza","Ветчина и грибы","томатный соус, моцарелла, ветчина, шампиньоны","30 см",2890],
+ ["pizza","Барбекю","соус барбекю, моцарелла, куриное филе, бекон, красный лук","30 см",3290],
+ ["pizza","С ананасами","сливочный соус, моцарелла, курица, ананас","30 см",2990],
+ ["pizza","Овощная","томатный соус, моцарелла, болгарский перец, помидоры, шампиньоны, кукуруза, маслины","30 см",2690],
+ ["pizza","Риддерская","сметанно-чесночный соус, моцарелла, говядина, шампиньоны, жареный лук, зелень","30 см",3190,"фирменная"],
+ ["salad","Цезарь с курицей","салат, куриное филе гриль, сухарики, твёрдый сыр, черри, соус цезарь","220 г",1990],
+ ["salad","Греческий","помидоры, огурцы, перец, брынза, маслины, красный лук, оливковое масло","220 г",1690],
+ ["salad","Оливье","картофель, колбаса или курица, морковь, горошек, яйцо, огурец, майонез","200 г",1290],
+ ["salad","Царский","курица, жареные грибы, сыр, яйцо, грецкий орех","180 г",1590],
+ ["salad","Миланский","отварной язык, куриное филе, свежие огурцы, горошек","180 г",1790,"фирменный"],
+ ["salad","Мексиканский","фасоль, курица, грибы, жареный лук, кукуруза, острая заправка","200 г",1490],
+ ["salad","Тёплый с говядиной","говядина, помидоры, перец, лук, соевый соус, кунжут","200 г",1990],
+ ["salad","Овощной","помидоры, огурцы, перец, зелень, масло или сметана","180 г",990],
+ ["soup","Борщ","говяжий бульон, свёкла, капуста, картофель, сметана, зелень","300 мл",1290],
+ ["soup","Солянка мясная","ветчина, колбаса, копчёная курица, солёные огурцы, маслины, лимон, сметана","300 мл",1590],
+ ["soup","Суп-лапша домашняя","куриный бульон, курица, лапша, морковь, зелень","300 мл",1190],
+ ["soup","Сырный с грибами","плавленый сыр, шампиньоны, картофель, зелень","300 мл",1390],
+ ["hot","Мясо по-барски","говяжья вырезка, маринованный огурец, сметана, чеснок, грецкий орех, сыр","200 г",2990],
+ ["hot","Курица в хрустящей корочке","куриное филе, чеснок, сыр, кунжут, панировка","200 г",2190],
+ ["hot","Котлеты куриные домашние","куриный фарш, лук, яйцо","2 шт.",1690],
+ ["hot","Мясо по-французски","свинина, лук, помидор, сыр, сметанный соус","220 г",2490],
+ ["hot","Рыба под сыром","филе белой рыбы, помидоры, лук, перец, сыр","200 г",2390],
+ ["hot","Бефстроганов","говядина, лук, шампиньоны, сметанный соус","200 г",2590],
+ ["hot","Паста карбонара","спагетти, бекон, сливки, желток, твёрдый сыр","300 г",2390],
+ ["hot","Паста с курицей и грибами","спагетти, курица, шампиньоны, сливочный соус","300 г",2290],
+ ["hot","Буррито с курицей","лепёшка, курица, помидоры, сыр, фасоль, соус","280 г",1990],
+ ["snack","Куриные стрипсы","куриное филе в панировке, соус на выбор","200 г",1690],
+ ["snack","Сырные палочки","моцарелла в панировке, томатный соус","150 г",1490],
+ ["snack","Гренки чесночные","хлеб из пиццерийного теста, чесночное масло, сыр","150 г",990],
+ ["side","Картофель фри","","150 г",790],
+ ["side","Картофель по-деревенски","лучше всего переносит доставку","180 г",890],
+ ["side","Пюре картофельное","","180 г",590],
+ ["side","Рис с овощами","","180 г",590],
+ ["side","Гречка со сливочным маслом","","180 г",590],
+ ["blini","Блины с ветчиной и сыром","сливочное масло","2 шт.",1190,"",1],
+ ["blini","Блины с курицей и грибами","сливочный соус","2 шт.",1290,"",1],
+ ["blini","Блины сладкие","сгущёнка, варенье, мёд или банан с шоколадом","2 шт.",990,"",1],
+ ["dessert","Мороженое","шоколад, сироп, орех или фрукты","3 шарика",990],
+ ["dessert","Чизкейк","классический","1 кусок",1490],
+ ["dessert","Брауни с мороженым","шоколадный брауни, шарик пломбира","",1590,"",1],
+ ["kids","«Чебурашка»","куриные котлеты, пюре с «лицом» из овощей","",1490],
+ ["kids","«Двойняшки»","куриные котлеты, картофель фри","",1490],
+ ["drinks","Американо","кофе из зерна","200 мл",690],
+ ["drinks","Капучино","","300 мл",890],
+ ["drinks","Латте","","350 мл",990],
+ ["drinks","Раф медовый","","350 мл",1190],
+ ["drinks","Чай в чайнике","чёрный или зелёный","600 мл",790],
+ ["drinks","Облепиховый чай","фирменный","600 мл",1190],
+ ["drinks","Морс домашний","","1 л",1290],
+ ["drinks","Компот","","1 л",990],
+ ["drinks","Лимонад","вкус уточните в комментарии","1 л",1690],
+ ["drinks","Молочный коктейль","классический, клубничный или шоколадный","300 мл",1190]
+];
+// Перевод блюд: русское название → [казахское название, состав]
+const KK_MENU = {
+ "Маргарита":["Маргарита","қызанақ тұздығы, моцарелла, қызанақ, базилик, зәйтүн майы"],
+ "Пепперони":["Пепперони","қызанақ тұздығы, моцарелла, пепперони, орегано"],
+ "Четыре сыра":["Төрт ірімшік","кілегей тұздығы, моцарелла, қатты ірімшік, брынза, көгерген ірімшік"],
+ "Миланская":["Миланская","кілегей тұздығы, моцарелла, ысталған тауық, шампиньон, қызыл пияз"],
+ "Нью-Йорк":["Нью-Йорк","қызанақ тұздығы, моцарелла, ысталған шұжық, сиыр еті, шампиньон, зәйтүн"],
+ "Ассорти":["Ассорти","қызанақ тұздығы, моцарелла, ветчина, тауық, сиыр еті, пепперони"],
+ "Деревенская":["Ауылша","кілегей тұздығы, моцарелла, пісірілген картоп, ысталған тауық, маринадталған қияр, қуырылған пияз, аскөк"],
+ "Ветчина и грибы":["Ветчина мен саңырауқұлақ","қызанақ тұздығы, моцарелла, ветчина, шампиньон"],
+ "Барбекю":["Барбекю","барбекю тұздығы, моцарелла, тауық филесі, бекон, қызыл пияз"],
+ "С ананасами":["Ананасты","кілегей тұздығы, моцарелла, тауық, ананас"],
+ "Овощная":["Көкөністі","қызанақ тұздығы, моцарелла, болгар бұрышы, қызанақ, шампиньон, жүгері, зәйтүн"],
+ "Риддерская":["Риддерская","қаймақ-сарымсақ тұздығы, моцарелла, сиыр еті, шампиньон, қуырылған пияз, көк"],
+ "Цезарь с курицей":["Тауық қосылған Цезарь","салат, гриль тауық филесі, кептірілген нан, қатты ірімшік, черри, цезарь тұздығы"],
+ "Греческий":["Грек салаты","қызанақ, қияр, бұрыш, брынза, зәйтүн, қызыл пияз, зәйтүн майы"],
+ "Оливье":["Оливье","картоп, шұжық немесе тауық, сәбіз, бұршақ, жұмыртқа, қияр, майонез"],
+ "Царский":["Царский","тауық, қуырылған саңырауқұлақ, ірімшік, жұмыртқа, грек жаңғағы"],
+ "Миланский":["Миланский","қайнатылған тіл, тауық филесі, жаңа қияр, бұршақ"],
+ "Мексиканский":["Мексикалық","үрме бұршақ, тауық, саңырауқұлақ, қуырылған пияз, жүгері, ащы тұздық"],
+ "Тёплый с говядиной":["Сиыр етімен жылы салат","сиыр еті, қызанақ, бұрыш, пияз, соя тұздығы, күнжіт"],
+ "Овощной":["Көкөніс салаты","қызанақ, қияр, бұрыш, көк, май немесе қаймақ"],
+ "Борщ":["Борщ","сиыр сорпасы, қызылша, қырыққабат, картоп, қаймақ, көк"],
+ "Солянка мясная":["Етті солянка","ветчина, шұжық, ысталған тауық, тұздалған қияр, зәйтүн, лимон, қаймақ"],
+ "Суп-лапша домашняя":["Үй кеспесі","тауық сорпасы, тауық, кеспе, сәбіз, көк"],
+ "Сырный с грибами":["Саңырауқұлақты ірімшік сорпасы","балқытылған ірімшік, шампиньон, картоп, көк"],
+ "Мясо по-барски":["«По-барски» ет","сиыр еті, маринадталған қияр, қаймақ, сарымсақ, грек жаңғағы, ірімшік"],
+ "Курица в хрустящей корочке":["Қытырлақ тауық","тауық филесі, сарымсақ, ірімшік, күнжіт, панировка"],
+ "Котлеты куриные домашние":["Үй тауық котлеттері","тауық фаршы, пияз, жұмыртқа"],
+ "Мясо по-французски":["Французша ет","шошқа еті, пияз, қызанақ, ірімшік, қаймақ тұздығы"],
+ "Рыба под сыром":["Ірімшік астындағы балық","ақ балық филесі, қызанақ, пияз, бұрыш, ірімшік"],
+ "Бефстроганов":["Бефстроганов","сиыр еті, пияз, шампиньон, қаймақ тұздығы"],
+ "Паста карбонара":["Карбонара пастасы","спагетти, бекон, кілегей, сарыуыз, қатты ірімшік"],
+ "Паста с курицей и грибами":["Тауық пен саңырауқұлақ қосылған паста","спагетти, тауық, шампиньон, кілегей тұздығы"],
+ "Буррито с курицей":["Тауық қосылған буррито","лаваш, тауық, қызанақ, ірімшік, үрме бұршақ, тұздық"],
+ "Куриные стрипсы":["Тауық стрипстері","панировкадағы тауық филесі, таңдауыңызша тұздық"],
+ "Сырные палочки":["Ірімшік таяқшалары","панировкадағы моцарелла, қызанақ тұздығы"],
+ "Гренки чесночные":["Сарымсақты гренка","пицца қамырынан нан, сарымсақ майы, ірімшік"],
+ "Картофель фри":["Фри картобы",""],
+ "Картофель по-деревенски":["Ауылша картоп","жеткізуге ең жақсы шыдайды"],
+ "Пюре картофельное":["Картоп пюресі",""],
+ "Рис с овощами":["Көкөністі күріш",""],
+ "Гречка со сливочным маслом":["Сары май қосылған қарақұмық",""],
+ "Блины с ветчиной и сыром":["Ветчина мен ірімшік қосылған құймақ","сары май"],
+ "Блины с курицей и грибами":["Тауық пен саңырауқұлақ қосылған құймақ","кілегей тұздығы"],
+ "Блины сладкие":["Тәтті құймақ","қоюлатылған сүт, тосап, бал немесе банан мен шоколад"],
+ "Мороженое":["Балмұздақ","шоколад, шәрбат, жаңғақ немесе жемістер"],
+ "Чизкейк":["Чизкейк","классикалық"],
+ "Брауни с мороженым":["Балмұздақ қосылған брауни","шоколадты брауни, бір шар пломбир"],
+ "«Чебурашка»":["«Чебурашка»","тауық котлеттері, көкөністен «беті» бар пюре"],
+ "«Двойняшки»":["«Егіздер»","тауық котлеттері, фри картобы"],
+ "Американо":["Американо","дәнді кофе"],
+ "Капучино":["Капучино",""],
+ "Латте":["Латте",""],
+ "Раф медовый":["Балды раф",""],
+ "Чай в чайнике":["Шәйнектегі шай","қара немесе жасыл"],
+ "Облепиховый чай":["Шырғанақ шайы","фирмалық"],
+ "Морс домашний":["Үй морсы",""],
+ "Компот":["Компот",""],
+ "Лимонад":["Лимонад","дәмін түсініктемеде көрсетіңіз"],
+ "Молочный коктейль":["Сүт коктейлі","классикалық, құлпынай немесе шоколад"]
+};
+const KK_UNIT = {"2 шт.":"2 дана","3 шарика":"3 шар","1 кусок":"1 тілім"};
+const KK_TAG = {"часто берут":"жиі алады","фирменная":"фирмалық","фирменный":"фирмалық"};
+
+const COMBOS = [
+ {id:"c1",name:"Обед «Лёгкий»",kk:"«Жеңіл» түскі ас",desc:"суп дня, салат дня, хлеб, морс или чай",dkk:"күн сорпасы, күн салаты, нан, морс немесе шай",price:1990},
+ {id:"c2",name:"Обед «Сытный»",kk:"«Тойымды» түскі ас",desc:"суп дня, горячее дня с гарниром, салат дня, хлеб, морс или чай",dkk:"күн сорпасы, гарнирі бар күннің ыстық тағамы, күн салаты, нан, морс немесе шай",price:2690},
+ {id:"c3",name:"Пицца-ланч",kk:"Пицца-ланч",desc:"пицца 25 см (Маргарита, Пепперони, Ветчина и грибы или Миланская), суп или салат дня, напиток",dkk:"25 см пицца (Маргарита, Пепперони, Ветчина мен саңырауқұлақ немесе Миланская), күн сорпасы немесе салаты, сусын",price:2990}
+];
+const SETS = [
+ {id:"s1",name:"На двоих",kk:"Екеуге",desc:"пицца 30 см на выбор, Цезарь с курицей, 2 напитка",dkk:"таңдауыңызша 30 см пицца, тауық қосылған Цезарь, 2 сусын",price:5490},
+ {id:"s2",name:"Семейный",kk:"Отбасылық",desc:"2 пиццы на выбор, картофель по-деревенски, морс 1 л",dkk:"таңдауыңызша 2 пицца, ауылша картоп, 1 л морс",price:7490},
+ {id:"s3",name:"Компания",kk:"Достармен",desc:"3 пиццы на выбор, куриные стрипсы, 2 л напитков",dkk:"таңдауыңызша 3 пицца, тауық стрипстері, 2 л сусын",price:10990}
+];
+// Обед по дням недели — показывается, если администратор не прислал другой командой /obed
+const WEEK = {
+ 1:{ru:["борщ","куриная котлета с пюре","из свежей капусты"],kk:["борщ","пюре қосылған тауық котлеті","жас қырыққабат салаты"]},
+ 2:{ru:["суп-лапша","бефстроганов с гречкой","«Осенний»"],kk:["үй кеспесі","қарақұмық қосылған бефстроганов","«Күзгі» салат"]},
+ 3:{ru:["сырный с грибами","курица в корочке с рисом","морковный с чесноком"],kk:["саңырауқұлақты ірімшік сорпасы","күріш қосылған қытырлақ тауық","сарымсақты сәбіз салаты"]},
+ 4:{ru:["солянка","биточки по-селянски с пюре","овощной"],kk:["солянка","пюре қосылған селянша биточки","көкөніс салаты"]},
+ 5:{ru:["с фрикадельками","паста с курицей и грибами","Оливье"],kk:["тефтелі сорпа","тауық пен саңырауқұлақ қосылған паста","Оливье"]}
+};
+
+/* Фото и видео: файлы с этими именами кладутся в папку assets.
+   Пока файла нет, на его месте видна подпись с кодом. */
+const SLOTS = {
+  hero:   {img:"hero.jpg",video:"hero.mp4",code:"Видео В-01",spec:"печь: пицца выходит на лопате, 6–10 с, без звука, 16:9",icon:"pizza",tone:"brown"},
+  lunch:  {img:"obed.jpg",code:"Фото О-01",spec:"обед на подносе: суп, горячее, салат, морс, под 45°",icon:"plate",tone:"blue"},
+  table:  {img:"stol.jpg",code:"Фото З-05",spec:"сервированный стол на 4: свеча, салфетки, меню",icon:"table",tone:"brown"},
+  set_s1: {img:"nabor-na-dvoih.jpg",code:"Фото Н-01",spec:"набор «На двоих» сверху, коробка открыта",icon:"box",tone:"blue"},
+  set_s2: {img:"nabor-semeynyy.jpg",code:"Фото Н-02",spec:"набор «Семейный» сверху",icon:"box",tone:"blue"},
+  set_s3: {img:"nabor-kompaniya.jpg",code:"Фото Н-03",spec:"набор «Компания» сверху, три коробки",icon:"box",tone:"blue"},
+  cat_side:{img:"garniry.jpg",code:"Фото Гр-01",spec:"все гарниры рядом в мисках, сверху",icon:"plate",tone:"sand"},
+  cat_drinks:{img:"napitki.jpg",code:"Фото Нп-01",spec:"кофе, чай в чайнике, морс, лимонад, под 45°",icon:"cup",tone:"sand"}
+};
+const VIDS = [
+  {video:"testo.mp4",img:"testo.jpg",code:"Видео В-02",spec:"руки растягивают тесто, 5–8 с, 9:16",title:["Тесто","Қамыр"],text:["Дрожжевое, сутки в холоде. Растягиваем руками, без скалки.","Ашытқылы, бір тәулік суықта. Оқлаусыз, қолмен созамыз."]},
+  {video:"pech.mp4",img:"pech.jpg",code:"Видео В-03",spec:"пицца в печи, сыр пузырится, 5–8 с, 9:16",title:["Печь","Пеш"],text:["Несколько минут при высокой температуре, до хрустящего края.","Жоғары температурада бірнеше минут, жиегі қытырлақ болғанша."]},
+  {video:"podacha.mp4",img:"podacha.jpg",code:"Видео В-04",spec:"нарезка, тянущийся сыр, коробка, 5–8 с, 9:16",title:["Подача","Ұсыну"],text:["Режем, упаковываем и сразу передаём курьеру.","Кесеміз, қораптаймыз және бірден курьерге береміз."]}
+];
+const HALL = [
+  {img:"zal-1.jpg",code:"Фото З-01",spec:"общий план зала, тёплый свет, столы сервированы",icon:"table",tone:"blue"},
+  {img:"zal-2.jpg",code:"Фото З-02",spec:"деталь: свеча, меню, приборы",icon:"cup",tone:"brown"},
+  {img:"zal-3.jpg",code:"Фото З-03",spec:"повар у печи, со спины или руки",icon:"chef",tone:"brown"},
+  {img:"fasad.jpg",code:"Фото З-04",spec:"фасад и вход днём, вывеска видна",icon:"pin",tone:"blue"}
+];
+
+/* ================== ИКОНКИ ================== */
+const ICONS={
+ pizza:'<path d="M7 15c11-7 23-7 34 0L24 42z"/><path d="M10 19.5c9-5 19-5 28 0"/><circle cx="20" cy="25" r="2.2"/><circle cx="28" cy="28" r="2.2"/><circle cx="24" cy="34" r="1.8"/>',
+ bowl:'<path d="M6 22h36c0 10-8 17-18 17S6 32 6 22z"/><path d="M17 16c0-3 3-3 3-6M24 16c0-3 3-3 3-6M31 16c0-3 3-3 3-6"/>',
+ salad:'<path d="M6 24h36c0 9-8 15-18 15S6 33 6 24z"/><path d="M13 24c0-6 4-9 9-9-1 5-4 8-9 9zM35 24c0-6-4-9-9-9 1 5 4 8 9 9zM24 24c-2-4-1-9 2-12 2 4 1 9-2 12z"/>',
+ plate:'<circle cx="24" cy="24" r="13"/><circle cx="24" cy="24" r="8"/><path d="M4 9v8a2.5 2.5 0 005 0V9M6.5 17v22M44 9c-3 0-4 5-4 10h4v20"/>',
+ snack:'<path d="M14 40l4-26h12l4 26z"/><path d="M18 14l-2-6M24 14V7M30 14l2-6M16 26h16"/>',
+ blini:'<ellipse cx="24" cy="21" rx="17" ry="5"/><path d="M7 21v5c0 3 7.6 5 17 5s17-2 17-5v-5M7 26v5c0 3 7.6 5 17 5s17-2 17-5v-5"/>',
+ dessert:'<path d="M6 34l28-15 8 5v14H6z"/><path d="M6 34h36M34 19l-2-6"/><circle cx="32" cy="10" r="2.5"/>',
+ kids:'<circle cx="24" cy="24" r="16"/><circle cx="19" cy="21" r="1.6"/><circle cx="29" cy="21" r="1.6"/><path d="M18 28c3 4 9 4 12 0"/>',
+ cup:'<path d="M9 18h24v8a12 12 0 01-24 0z"/><path d="M33 20h3a5 5 0 010 10h-4M7 42h28M16 7c0 3-2 3-2 6M22 7c0 3-2 3-2 6M28 7c0 3-2 3-2 6"/>',
+ box:'<path d="M7 17l17-8 17 8v17l-17 8-17-8z"/><path d="M7 17l17 8 17-8M24 25v17"/>',
+ clock:'<circle cx="24" cy="24" r="17"/><path d="M24 13v11l7 5"/>',
+ calendar:'<rect x="7" y="10" width="34" height="31" rx="3"/><path d="M7 19h34M16 6v8M32 6v8M15 27h4M22 27h4M29 27h4M15 33h4M22 33h4"/>',
+ table:'<path d="M5 18h38M9 18v22M39 18v22M5 18l4-6h30l4 6M14 26h20"/><path d="M24 12V6"/>',
+ chef:'<path d="M14 28v12h20V28"/><path d="M14 28a8 8 0 01-2-15 8 8 0 0112-5 8 8 0 0112 5 8 8 0 01-2 15z"/><path d="M14 34h20"/>',
+ pin:'<path d="M24 43s-13-12-13-23a13 13 0 0126 0c0 11-13 23-13 23z"/><circle cx="24" cy="20" r="5"/>',
+ phone:'<path d="M14 6h6l3 10-5 3a24 24 0 0011 11l3-5 10 3v6a4 4 0 01-4 4C22 38 10 26 10 10a4 4 0 014-4z"/>',
+ camera:'<rect x="6" y="6" width="36" height="36" rx="10"/><circle cx="24" cy="24" r="8"/><circle cx="34.5" cy="13.5" r="1.5"/>',
+ play:'<circle cx="24" cy="24" r="17"/><path d="M20 16l12 8-12 8z"/>'
+};
+const CAT_ICON={pizza:"pizza",salad:"salad",soup:"bowl",hot:"plate",snack:"snack",blini:"blini",dessert:"dessert",kids:"kids",side:"plate",drinks:"cup"};
+const svg=(name,sw=2)=>`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]||""}</svg>`;
+document.querySelectorAll("svg[data-icon]").forEach(s=>{s.innerHTML=ICONS[s.dataset.icon];s.setAttribute("stroke","currentColor");s.setAttribute("stroke-linecap","round");s.setAttribute("stroke-linejoin","round");s.setAttribute("aria-hidden","true")});
+
+/* ================== ВСПОМОГАТЕЛЬНОЕ ================== */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>Math.round(n).toLocaleString("ru-RU").replace(/\s/g," ")+" тг";
+const TR={а:"a",б:"b",в:"v",г:"g",д:"d",е:"e",ё:"e",ж:"zh",з:"z",и:"i",й:"y",к:"k",л:"l",м:"m",н:"n",о:"o",п:"p",р:"r",с:"s",т:"t",у:"u",ф:"f",х:"h",ц:"ts",ч:"ch",ш:"sh",щ:"sch",ъ:"",ы:"y",ь:"",э:"e",ю:"yu",я:"ya"};
+const lat=s=>[...s.toLowerCase()].map(c=>TR[c]??c).join("").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const phoneHref="tel:"+CONFIG.phone.replace(/[^\d+]/g,"");
+const waHref=t=>`https://wa.me/${CONFIG.whatsApp}${t?"?text="+encodeURIComponent(t):""}`;
+const MONTHS_KK=["қаңтар","ақпан","наурыз","сәуір","мамыр","маусым","шілде","тамыз","қыркүйек","қазан","қараша","желтоқсан"];
+const MONTHS_RU=["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
+const dayMonth=d=>d.getDate()+" "+(LANG==="kk"?MONTHS_KK:MONTHS_RU)[d.getMonth()];
+const pluralRu=(n,f)=>{n=Math.abs(n)%100;const n1=n%10;if(n>10&&n<20)return f[2];if(n1>1&&n1<5)return f[1];if(n1===1)return f[0];return f[2]};
+const countText=n=>L(n+" "+pluralRu(n,["позиция","позиции","позиций"]),n+" тағам");
+
+/* Медиа-блок: снизу подпись, сверху фото/видео; если файла нет, фото/видео удаляется и остаётся подпись */
+function media(s){
+  const ph=`<div class="ph">${svg(s.icon||"play",1.6)}<span class="code">${esc(s.code)}</span><span class="spec">${esc(s.spec)}</span></div>`;
+  let top="";
+  if(s.video) top=`<video src="${BASE}assets/${s.video}" ${s.img?`poster="${BASE}assets/${s.img}"`:""} autoplay muted loop playsinline preload="metadata" aria-hidden="true" onerror="this.remove()"></video>`;
+  else if(s.img) top=`<img src="${BASE}assets/${s.img}" alt="${esc(s.alt||"")}" loading="lazy" decoding="async" onerror="this.remove()">`;
+  return ph+top;
+}
+function fillSlot(el){const s=SLOTS[el.dataset.slot];if(s){el.classList.add("tone-"+(s.tone||"blue"));el.innerHTML=media(s)}}
+
+/* Объекты меню */
+const counters={};
+const ITEMS=M.map((r,i)=>{
+  const cat=CATS.find(c=>c[0]===r[0]);counters[r[0]]=(counters[r[0]]||0)+1;
+  const kk=KK_MENU[r[1]]||[r[1],r[2]];
+  return {id:"m"+i,cat:r[0],ru:r[1],name:L(r[1],kk[0]),desc:L(r[2],kk[1]),w:L(r[3],KK_UNIT[r[3]]||r[3]),price:r[4],
+    tag:r[5]?L(r[5],KK_TAG[r[5]]||r[5]):"",hall:!!r[6],
+    img:lat(cat[1])+"-"+lat(r[1])+".jpg",code:"Фото "+cat[3]+"-"+String(counters[r[0]]).padStart(2,"0")};
+});
+COMBOS.forEach(c=>{c.ru=c.name;c.name=L(c.name,c.kk);c.desc=L(c.desc,c.dkk)});
+SETS.forEach(c=>{c.ru=c.name;c.name=L(c.name,c.kk);c.desc=L(c.desc,c.dkk)});
+const ALL={};[...ITEMS,...COMBOS,...SETS].forEach(x=>ALL[x.id]=x);
+let STOP=[];   // стоп-лист на сегодня (из Telegram)
+const isStopped=it=>it.ru&&STOP.some(s=>it.ru.toLowerCase().includes(s));
+
+/* ================== СБОРКА СТРАНИЦЫ ================== */
+const OPEN_AT=new Date(CONFIG.openDate+"T00:00:00");
+const beforeOpen=()=>Date.now()<OPEN_AT.getTime();
+if(!CONFIG.showPhotoCodes) document.documentElement.classList.add("no-codes");
+$("#pilot").hidden=!CONFIG.pilot;
+if(beforeOpen()){const b=$("#openBadge");b.hidden=false;
+  b.innerHTML=svg("calendar",2.4).replace("<svg",'<svg class="ico"')+" "+L("Открытие "+dayMonth(OPEN_AT)+" · бронь и предзаказ уже открыты",dayMonth(OPEN_AT)+" ашыламыз · брондау мен алдын ала тапсырыс ашық");}
+document.querySelectorAll("[data-slot]").forEach(fillSlot);
+
+const ADDR=CONFIG.address[LANG];
+$("#hPhone").href=phoneHref;$("#hPhone span").textContent=CONFIG.phone;
+$("#cAddr").textContent=ADDR;$("#mAddr").textContent=ADDR;$("#fAddr").textContent=ADDR;
+$("#cPhone").textContent=CONFIG.phone;$("#cPhone").href=phoneHref;$("#fPhone").textContent=CONFIG.phone;
+$("#bPhoneLink").textContent=CONFIG.phone;$("#bPhoneLink").href=phoneHref;
+$("#cWa").href=waHref("");$("#cHours").innerHTML=CONFIG.hours[LANG];
+$("#cIg").textContent="@"+CONFIG.instagram;$("#cIg").href=$("#fIg").href="https://instagram.com/"+CONFIG.instagram;
+$("#mLink").href=CONFIG.yandexMap;$("#fLegal").textContent=CONFIG.legal;
+$("#payStep").textContent=CONFIG.courierCard
+  ?L("Счёт в Kaspi, картой курьеру или наличными при получении.","Kaspi шоты, курьерге картамен немесе алған кезде қолма-қол.")
+  :L("Счёт в Kaspi после подтверждения или наличными при получении.","Растаудан кейін Kaspi шоты немесе алған кезде қолма-қол.");
+$("#terms").innerHTML=[
+  L(`Минимальный заказ на доставку ${fmt(CONFIG.minOrder)}`,`Жеткізуге ең аз тапсырыс ${fmt(CONFIG.minOrder)}`),
+  L(`Доставка ${fmt(CONFIG.deliveryFee)}, от ${fmt(CONFIG.freeFrom)} бесплатно`,`Жеткізу ${fmt(CONFIG.deliveryFee)}, ${fmt(CONFIG.freeFrom)} бастап тегін`),
+  L(`Заказы принимаем до ${CONFIG.lastOrder}`,`Тапсырыстарды ${CONFIG.lastOrder} дейін қабылдаймыз`),
+  L(`Самовывоз: ${ADDR}`,`Өзі алып кету: ${ADDR}`)].map(t=>`<span>${t}</span>`).join("");
+const PAY=[
+  {v:"Kaspi — счёт после подтверждения",kk:"Kaspi — растаудан кейін шот"},
+  {v:"Наличными",kk:"Қолма-қол"},
+  ...(CONFIG.courierCard?[{v:"Картой курьеру",kk:"Курьерге картамен"}]:[])
+];
+
+/* Обед дня */
+let LUNCH_OVERRIDE=null;
+function renderLunch(){
+  const d=new Date().getDay();
+  const names=L({1:"понедельник",2:"вторник",3:"среда",4:"четверг",5:"пятница"},{1:"дүйсенбі",2:"сейсенбі",3:"сәрсенбі",4:"бейсенбі",5:"жұма"});
+  const day=WEEK[d]?d:1;
+  $("#lunchTitle").textContent=WEEK[d]?L("Сегодня, ","Бүгін, ")+names[d]:L("Обед в понедельник","Дүйсенбідегі түскі ас");
+  const w=(WEEK[d]&&LUNCH_OVERRIDE)||WEEK[day][LANG];
+  const lab=L(["Суп","Горячее","Салат"],["Сорпа","Ыстық тағам","Салат"]);
+  $("#today").innerHTML=lab.map((x,i)=>`<div><small>${x}</small><b>${esc(w[i]||"—")}</b></div>`).join("");
+}
+renderLunch();
+$("#combos").innerHTML=COMBOS.map(c=>`<div class="combo"><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><div class="side"><span class="price">${fmt(c.price)}</span><span data-ctl="${c.id}"></span></div></div>`).join("");
+
+/* Меню */
+$("#tabs").setAttribute("aria-label",L("Категории меню","Мәзір санаттары"));
+$("#tabs").innerHTML=CATS.map((c,i)=>`<button type="button" data-cat="${c[0]}" aria-pressed="${i===0}">${L(c[1],c[5])}</button>`).join("");
+function renderMenu(){
+  $("#menuList").innerHTML=CATS.map(c=>{
+    const items=ITEMS.filter(m=>m.cat===c[0]);
+    const head=`<div class="cathead"><h3>${L(c[1],c[5])}</h3><span>${esc(L(c[2],c[6]))}</span></div>`;
+    if(!c[4]){
+      return `<div class="catblock" id="cat-${c[0]}">${head}<div class="listcat"><div class="media tone-sand">${media(SLOTS["cat_"+c[0]])}</div><div class="rows">${items.map(m=>{const off=isStopped(m);return `<div class="lrow"><span><b>${esc(m.name)}</b>${m.desc||m.w?`<small>${esc([m.desc,m.w].filter(Boolean).join(" · "))}</small>`:""}</span><span class="price">${fmt(m.price)}</span>${off?`<span class="badge off">${L("нет сегодня","бүгін жоқ")}</span>`:`<span data-ctl="${m.id}"></span>`}</div>`}).join("")}</div></div></div>`;
+    }
+    return `<div class="catblock" id="cat-${c[0]}">${head}<div class="grid">${items.map((m,i)=>cardHTML(m,c,i)).join("")}</div></div>`;
+  }).join("");
+  document.querySelectorAll(".catblock").forEach(el=>io.observe(el));
+}
+function cardHTML(m,c,i){
+  const off=isStopped(m);
+  const badges=(m.tag?`<span class="badge">${esc(m.tag)}</span>`:"")+(m.hall?`<span class="badge hall">${L("только в зале","тек залда")}</span>`:"")+(off?`<span class="badge off">${L("нет сегодня","бүгін жоқ")}</span>`:"");
+  const tone=["blue","brown"][i%2];
+  return `<article class="card${off?" off":""}"><div class="media tone-${tone}">${media({img:m.img,code:m.code,spec:c[4],icon:CAT_ICON[m.cat],alt:m.name})}</div>
+    <div class="body"><div class="nm"><h3>${esc(m.name)}</h3>${badges}</div><p>${esc(m.desc)}</p>
+    <div class="row"><span class="price">${fmt(m.price)}${m.w?`<small>${esc(m.w)}</small>`:""}</span>${m.hall||off?"":`<span data-ctl="${m.id}"></span>`}</div></div></article>`;
+}
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)setTab(en.target.id.slice(4))}),{rootMargin:"-35% 0px -60% 0px"});
+renderMenu();
+$("#setList").innerHTML=SETS.map(s=>`<article class="card"><div class="media tone-blue">${media(SLOTS["set_"+s.id])}</div><div class="body"><div class="nm"><h3>${esc(s.name)}</h3></div><p>${esc(s.desc)}</p><div class="row"><span class="price">${fmt(s.price)}</span><span data-ctl="${s.id}"></span></div></div></article>`).join("");
+$("#vids").innerHTML=VIDS.map((v,i)=>`<figure><div class="media tone-${i%2?"brown":"blue"}">${media({...v,icon:"play"})}</div><figcaption><b>${L(v.title[0],v.title[1])}</b><span>${L(v.text[0],v.text[1])}</span></figcaption></figure>`).join("");
+$("#gallery").innerHTML=HALL.map(h=>`<div class="media tone-${h.tone}">${media(h)}</div>`).join("");
+
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest("button[data-cat]");if(!b)return;document.getElementById("cat-"+b.dataset.cat).scrollIntoView();setTab(b.dataset.cat)});
+function setTab(cat){document.querySelectorAll("#tabs button").forEach(x=>{const on=x.dataset.cat===cat;x.setAttribute("aria-pressed",on);if(on)x.scrollIntoView({block:"nearest",inline:"nearest"})})}
+
+/* Обед дня и стоп-лист с сервера (команды /obed и /stop в Telegram) */
+(async()=>{
+  if(!CONFIG.statusEndpoint)return;
+  try{
+    const r=await fetch(CONFIG.statusEndpoint,{cache:"no-store"});const j=await r.json();
+    if(Array.isArray(j.lunch)&&j.lunch.length){LUNCH_OVERRIDE=j.lunch;renderLunch()}
+    if(Array.isArray(j.stop)&&j.stop.length){
+      STOP=j.stop.map(s=>String(s).toLowerCase().trim()).filter(Boolean);
+      for(const k in cart)if(isStopped(ALL[k]))delete cart[k];
+      save();renderMenu();render();
+    }
+  }catch(e){}
+})();
+
+/* ================== КОРЗИНА ================== */
+let cart={};
+try{const s=JSON.parse(localStorage.getItem("milano-cart")||"{}");for(const k in s)if(ALL[k]&&!ALL[k].hall)cart[k]=s[k];}catch(e){}
+const save=()=>{try{localStorage.setItem("milano-cart",JSON.stringify(cart))}catch(e){}};
+function ctlHTML(id){
+  const q=cart[id]||0;
+  return q?`<span class="qty"><button type="button" data-dec="${id}" aria-label="−">−</button><span>${q}</span><button type="button" data-inc="${id}" aria-label="+">+</button></span>`
+          :`<button class="btn small" type="button" data-inc="${id}">${L("В корзину","Себетке")}</button>`;
+}
+function totals(){let n=0,s=0;for(const k in cart){n+=cart[k];s+=cart[k]*ALL[k].price}return{n,s}}
+function render(){
+  document.querySelectorAll("[data-ctl]").forEach(el=>el.innerHTML=ctlHTML(el.dataset.ctl));
+  const{n,s}=totals();
+  $("#cartCount").textContent=n;
+  $("#cartbar").hidden=!n||!$("#panel").hidden;
+  $("#barCount").textContent=countText(n);$("#barSum").textContent=fmt(s);
+  if(!$("#panel").hidden&&step==="cart")renderPanel();
+}
+document.addEventListener("click",e=>{
+  const inc=e.target.closest("[data-inc]"),dec=e.target.closest("[data-dec]");
+  if(inc){const id=inc.dataset.inc;cart[id]=(cart[id]||0)+1;save();render()}
+  if(dec){const id=dec.dataset.dec;cart[id]--;if(cart[id]<=0)delete cart[id];save();render()}
+});
+
+let step="cart",result=null;
+let draft={mode:"delivery",pay:PAY[0].v,whenMode:"asap"};
+function openPanel(){step="cart";result=null;$("#panel").hidden=false;$("#scrim").hidden=false;document.body.style.overflow="hidden";renderPanel();render();$("#closeCart").focus()}
+function closePanel(){$("#panel").hidden=true;$("#scrim").hidden=true;document.body.style.overflow="";render()}
+$("#openCart").onclick=openPanel;$("#barBtn").onclick=openPanel;$("#closeCart").onclick=closePanel;$("#scrim").onclick=closePanel;
+$("#panel").setAttribute("aria-label",L("Корзина","Себет"));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#panel").hidden)closePanel()});
+
+function calc(){const{s}=totals();const fee=draft.mode==="pickup"||s>=CONFIG.freeFrom?0:CONFIG.deliveryFee;return{s,fee,total:s+fee}}
+function localISO(d){const z=n=>String(n).padStart(2,"0");return`${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`}
+const hm=s=>{const[a,b]=s.split(":").map(Number);return a*60+b};
+function canAsap(){if(beforeOpen())return false;const d=new Date(),m=d.getHours()*60+d.getMinutes();return m>=hm(CONFIG.open)&&m<=hm(CONFIG.lastOrder)}
+
+function renderPanel(){
+  const body=$("#panelBody"),ids=Object.keys(cart);
+  $("#panelTitle").textContent=step==="cart"?L("Ваш заказ","Сіздің тапсырысыңыз"):step==="form"?L("Оформление","Рәсімдеу"):L("Заказ","Тапсырыс");
+  if(!ids.length&&step!=="done"){body.innerHTML=`<p class="empty">${L("Корзина пустая.<br>Добавьте блюда из меню.","Себет бос.<br>Мәзірден тағам қосыңыз.")}</p>`;return}
+  if(step==="cart"){
+    const{s,fee,total}=calc();const short=draft.mode==="delivery"&&s<CONFIG.minOrder;
+    const closedNote=beforeOpen()
+      ?L(`Кафе открывается ${dayMonth(OPEN_AT)}. Оформите заказ ко времени, начиная с этого дня.`,`Кафе ${dayMonth(OPEN_AT)} ашылады. Тапсырысты сол күннен бастап белгілі уақытқа рәсімдеңіз.`)
+      :(!canAsap()?L("Сейчас кухня закрыта. Оформите заказ ко времени — приготовим, когда откроемся.","Қазір ас үй жабық. Тапсырысты белгілі уақытқа рәсімдеңіз, ашылғанда дайындаймыз."):"");
+    body.innerHTML=`
+      <div class="lines">${ids.map(id=>`<div class="line"><span class="nm">${esc(ALL[id].name)}</span>${ctlHTML(id)}<span class="price">${fmt(ALL[id].price*cart[id])}</span></div>`).join("")}</div>
+      <div class="seg" role="radiogroup">
+        <label><input type="radio" name="mode" value="delivery" ${draft.mode==="delivery"?"checked":""}>${L("Доставка","Жеткізу")}</label>
+        <label><input type="radio" name="mode" value="pickup" ${draft.mode==="pickup"?"checked":""}>${L("Самовывоз","Өзі алып кету")}</label>
+      </div>
+      <div class="sum"><div><span>${L("Блюда","Тағамдар")}</span><span>${fmt(s)}</span></div>
+        ${draft.mode==="delivery"?`<div><span>${L("Доставка","Жеткізу")}</span><span>${fee?fmt(fee):L("бесплатно","тегін")}</span></div>`:""}
+        <div class="total"><span>${L("Итого","Барлығы")}</span><span>${fmt(total)}</span></div></div>
+      ${draft.mode==="delivery"?`<p class="hint ${short?"warn":""}">${short?L(`Минимальный заказ на доставку ${fmt(CONFIG.minOrder)}. Добавьте ещё на ${fmt(CONFIG.minOrder-s)}.`,`Жеткізуге ең аз тапсырыс ${fmt(CONFIG.minOrder)}. Тағы ${fmt(CONFIG.minOrder-s)} қосыңыз.`):(fee?L(`До бесплатной доставки ${fmt(CONFIG.freeFrom-s)}.`,`Тегін жеткізуге дейін ${fmt(CONFIG.freeFrom-s)}.`):L("Доставка бесплатная.","Жеткізу тегін."))}</p>`:`<p class="hint">${L("Заберите заказ в кафе: ","Тапсырысты кафеден алып кетіңіз: ")}${esc(ADDR)}.</p>`}
+      ${closedNote?`<p class="hint warn">${closedNote}</p>`:""}
+      <button class="btn" type="button" id="toForm" ${short?"disabled":""}>${L("Оформить заказ","Тапсырысты рәсімдеу")}</button>`;
+    body.querySelectorAll("input[name=mode]").forEach(r=>r.onchange=()=>{draft.mode=r.value;renderPanel()});
+    $("#toForm").onclick=()=>{if(!canAsap())draft.whenMode="time";step="form";renderPanel()};
+    return;
+  }
+  if(step==="form"){
+    const del=draft.mode==="delivery";
+    const minDate=localISO(beforeOpen()?OPEN_AT:new Date());
+    if(draft.date&&draft.date<minDate)draft.date=minDate;
+    body.innerHTML=`
+      <form id="orderForm" class="fields" novalidate>
+        <label class="f">${L("Имя","Аты")}<input id="oName" autocomplete="name" maxlength="60" value="${esc(draft.name)}" required></label>
+        <label class="f">${L("Телефон","Телефон")}<input id="oPhone" type="tel" autocomplete="tel" maxlength="20" placeholder="+7 7__ ___ __ __" value="${esc(draft.phone)}" required></label>
+        ${del?`<label class="f full">${L("Адрес","Мекенжай")}<input id="oAddr" autocomplete="street-address" maxlength="120" placeholder="${L("Улица или микрорайон, дом, квартира","Көше немесе шағын аудан, үй, пәтер")}" value="${esc(draft.addr)}" required></label>
+        <label class="f full">${L("Подъезд, этаж, домофон","Подъезд, қабат, домофон")}<input id="oEntr" maxlength="60" value="${esc(draft.entr)}"></label>`:""}
+        <div class="full seg" role="radiogroup">
+          <label><input type="radio" name="when" value="asap" ${draft.whenMode==="asap"?"checked":""} ${canAsap()?"":"disabled"}>${L("Как можно скорее","Мүмкіндігінше тез")}</label>
+          <label><input type="radio" name="when" value="time" ${draft.whenMode==="time"?"checked":""}>${L("Ко времени","Белгілі уақытқа")}</label>
+        </div>
+        <div class="full fields" id="whenBox" ${draft.whenMode==="time"?"":"hidden"}>
+          <label class="f">${L("Дата","Күні")}<input id="oDate" type="date" min="${minDate}" value="${esc(draft.date||minDate)}"></label>
+          <label class="f">${L("Время","Уақыты")}<input id="oTime" type="time" min="${CONFIG.open}" max="${CONFIG.lastOrder}" step="900" value="${esc(draft.time||"")}"></label>
+        </div>
+        <label class="f full">${L("Оплата","Төлем")}<select id="oPay">${PAY.map(o=>`<option value="${esc(o.v)}" ${o.v===draft.pay?"selected":""}>${esc(L(o.v,o.kk))}</option>`).join("")}</select></label>
+        <label class="f full">${L("Комментарий","Түсініктеме")}<textarea id="oNote" maxlength="400" placeholder="${L("Какие пиццы в набор, сдача с 10 000 и т. п.","Жиынтыққа қандай пиццалар, 10 000-нан қайтарым т. б.")}">${esc(draft.note)}</textarea></label>
+        <label class="hp" aria-hidden="true">Сайт<input id="oHp" tabindex="-1" autocomplete="off"></label>
+        <p class="consent full">${L(`Отправляя заказ, вы соглашаетесь на обработку имени, телефона и адреса для его выполнения. <a href="${BASE}privacy.html">Политика конфиденциальности</a>`,`Тапсырысты жібере отырып, сіз оны орындау үшін атыңызды, телефоныңызды және мекенжайыңызды өңдеуге келісесіз. <a href="${BASE}privacy.html">Құпиялылық саясаты</a>`)}</p>
+        <p class="err full" id="oErr"></p>
+        <div class="full sendrow"><button class="btn ghost" type="button" id="back">${L("Назад","Артқа")}</button><button class="btn" type="submit" id="oSubmit">${L("Отправить заказ","Тапсырысты жіберу")}</button></div>
+      </form>`;
+    body.querySelectorAll("input[name=when]").forEach(r=>r.onchange=()=>{draft.whenMode=r.value;$("#whenBox").hidden=r.value!=="time"});
+    $("#back").onclick=()=>{grab();step="cart";renderPanel()};
+    $("#orderForm").onsubmit=async e=>{
+      e.preventDefault();grab();
+      const phoneOk=(draft.phone||"").replace(/\D/g,"").length>=10;
+      let err=!draft.name?L("Укажите имя.","Атыңызды көрсетіңіз."):!phoneOk?L("Укажите телефон, чтобы администратор мог перезвонить.","Әкімші қоңырау шала алуы үшін телефонды көрсетіңіз."):(del&&!draft.addr)?L("Укажите адрес доставки.","Жеткізу мекенжайын көрсетіңіз."):"";
+      if(!err&&draft.whenMode==="time"){
+        if(!draft.date||!draft.time)err=L("Укажите дату и время.","Күні мен уақытын көрсетіңіз.");
+        else if(hm(draft.time)<hm(CONFIG.open)||hm(draft.time)>hm(CONFIG.lastOrder))err=L(`Принимаем заказы на время с ${CONFIG.open} до ${CONFIG.lastOrder}.`,`Тапсырыстарды ${CONFIG.open} мен ${CONFIG.lastOrder} аралығына қабылдаймыз.`);
+        else if(draft.date<minDate||new Date(draft.date+"T"+draft.time)<new Date(Date.now()+45*60000))err=L("Выберите время хотя бы через 45 минут.","Кемінде 45 минуттан кейінгі уақытты таңдаңыз.");
+      }
+      if(err){$("#oErr").textContent=err;return}
+      const btn=$("#oSubmit");btn.disabled=true;btn.textContent=L("Отправляем…","Жіберіп жатырмыз…");
+      result=await send(CONFIG.orderEndpoint,orderPayload());
+      step="done";renderPanel();
+    };
+    return;
+  }
+  if(step==="done"){
+    if(result&&result.ok){
+      body.innerHTML=`<div class="okbox">${L("Заказ принят.","Тапсырыс қабылданды.")}</div>
+        <div><div class="hint">${L("Номер заказа","Тапсырыс нөмірі")}</div><div class="done-n">№ ${esc(result.number)}</div></div>
+        <p>${L("Администратор перезвонит в течение 10 минут и подтвердит время.","Әкімші 10 минут ішінде қоңырау шалып, уақытты растайды.")} ${/Kaspi/.test(draft.pay)?L("После звонка придёт счёт в Kaspi на ваш номер.","Қоңыраудан кейін нөміріңізге Kaspi шоты келеді."):""}</p>
+        <p class="hint">${L("Не перезвонили? Позвоните нам: ","Қоңырау болмады ма? Бізге хабарласыңыз: ")}<a href="${phoneHref}">${esc(CONFIG.phone)}</a>.</p>
+        <button class="btn ghost" type="button" id="closeDone">${L("Закрыть","Жабу")}</button>`;
+      cart={};save();render();$("#closeDone").onclick=closePanel;
+      return;
+    }
+    const text=orderText();
+    body.innerHTML=`
+      <p>${L("Отправьте заказ администратору одним сообщением: нажмите кнопку, и в WhatsApp откроется готовый текст.","Тапсырысты әкімшіге бір хабарламамен жіберіңіз: батырманы басыңыз, WhatsApp-та дайын мәтін ашылады.")}</p>
+      <pre class="msg" id="msg">${esc(text)}</pre>
+      <div class="sendrow">
+        <a class="btn" target="_blank" rel="noopener" href="${waHref(text)}">${L("Отправить в WhatsApp","WhatsApp-қа жіберу")}</a>
+        <button class="btn ghost" type="button" id="copy">${L("Скопировать","Көшіру")}</button>
+      </div>
+      <p class="hint" id="copyHint">${L(`Если WhatsApp не открылся, скопируйте текст и отправьте на ${esc(CONFIG.phone)} или позвоните.`,`WhatsApp ашылмаса, мәтінді көшіріп, ${esc(CONFIG.phone)} нөміріне жіберіңіз немесе қоңырау шалыңыз.`)}</p>
+      <button class="btn ghost" type="button" id="newOrder">${L("Очистить корзину","Себетті тазалау")}</button>`;
+    $("#copy").onclick=()=>copyText(text,$("#msg"),$("#copyHint"));
+    $("#newOrder").onclick=()=>{cart={};save();step="cart";render();renderPanel()};
+  }
+}
+function grab(){
+  const v=id=>{const el=document.getElementById(id);return el?el.value.trim():undefined};
+  draft.name=v("oName");draft.phone=v("oPhone");draft.pay=v("oPay");draft.note=v("oNote");draft.hp=v("oHp");
+  draft.date=v("oDate");draft.time=v("oTime");
+  if(draft.mode==="delivery"){draft.addr=v("oAddr");draft.entr=v("oEntr")}
+}
+// Текст для администратора всегда на русском, с пометкой языка сайта
+function whenText(){
+  if(draft.whenMode!=="time")return"Как можно скорее";
+  const d=new Date(draft.date+"T00:00");
+  return d.getDate()+" "+MONTHS_RU[d.getMonth()]+", "+draft.time;
+}
+function orderPayload(){
+  const{s,fee,total}=calc();const del=draft.mode==="delivery";
+  return{type:"order",lang:LANG,mode:del?"Доставка":"Самовывоз",
+    items:Object.keys(cart).map(id=>({name:ALL[id].ru||ALL[id].name,qty:cart[id],price:ALL[id].price})),
+    sum:s,fee:del?fee:0,total,name:draft.name,phone:draft.phone,
+    address:del?[draft.addr,draft.entr].filter(Boolean).join(", "):"",
+    when:whenText(),pay:draft.pay,note:draft.note||"",hp:draft.hp||""};
+}
+function orderText(){
+  const p=orderPayload();
+  return["Заказ с сайта «Милано»"+(LANG==="kk"?" (каз. версия)":""),p.mode,"",
+    ...p.items.map(i=>`• ${i.name} × ${i.qty} = ${fmt(i.price*i.qty)}`),"",
+    `Блюда: ${fmt(p.sum)}`,p.mode==="Доставка"?`Доставка: ${p.fee?fmt(p.fee):"бесплатно"}`:null,`Итого: ${fmt(p.total)}`,"",
+    `Имя: ${p.name}`,`Телефон: ${p.phone}`,p.address?`Адрес: ${p.address}`:null,
+    `Когда: ${p.when}`,`Оплата: ${p.pay}`,p.note?`Комментарий: ${p.note}`:null
+  ].filter(x=>x!==null).join("\n");
+}
+async function send(url,payload){
+  if(!url)return{ok:false};
+  try{
+    const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),12000);
+    const r=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload),signal:ctl.signal});
+    clearTimeout(t);const j=await r.json();return j&&j.ok?j:{ok:false};
+  }catch(e){return{ok:false}}
+}
+function copyText(text,el,hint){
+  const fallback=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);hint.textContent=L("Текст выделен. Скопируйте его и отправьте администратору.","Мәтін белгіленді. Оны көшіріп, әкімшіге жіберіңіз.")};
+  try{navigator.clipboard.writeText(text).then(()=>hint.textContent=L("Скопировано. Вставьте текст в чат с администратором.","Көшірілді. Мәтінді әкімшімен чатқа қойыңыз."),fallback)}catch(e){fallback()}
+}
+
+/* ================== БРОНЬ ================== */
+(function(){
+  const t=new Date();t.setDate(t.getDate()+1);
+  const minD=beforeOpen()?OPEN_AT:new Date();
+  $("#bDate").min=localISO(minD);$("#bDate").value=localISO(beforeOpen()?OPEN_AT:t);
+  $("#bookForm").addEventListener("submit",async e=>{
+    e.preventDefault();
+    const g=id=>$("#"+id).value.trim();
+    const phoneOk=g("bPhone").replace(/\D/g,"").length>=10;
+    const err=!g("bName")?L("Укажите имя.","Атыңызды көрсетіңіз."):!phoneOk?L("Укажите телефон для подтверждения брони.","Брондауды растау үшін телефонды көрсетіңіз."):!g("bDate")?L("Выберите дату.","Күнді таңдаңыз."):"";
+    $("#bErr").textContent=err;if(err)return;
+    const dd=new Date(g("bDate")+"T00:00");
+    const d=dd.getDate()+" "+MONTHS_RU[dd.getMonth()]+", "+["воскресенье","понедельник","вторник","среда","четверг","пятница","суббота"][dd.getDay()];
+    const p={type:"booking",lang:LANG,date:d,time:g("bTime"),guests:g("bGuests"),reason:g("bReason"),name:g("bName"),phone:g("bPhone"),note:g("bNote"),hp:g("bHp")};
+    const btn=$("#bSubmit"),label=btn.textContent;btn.disabled=true;btn.textContent=L("Отправляем…","Жіберіп жатырмыз…");
+    const r=await send(CONFIG.bookingEndpoint,p);
+    btn.disabled=false;btn.textContent=label;
+    const out=$("#bOut");out.hidden=false;
+    if(r.ok){out.innerHTML=`<div class="okbox">${L(`Заявка № ${esc(r.number)} отправлена. Администратор перезвонит и подтвердит бронь.`,`№ ${esc(r.number)} өтінім жіберілді. Әкімші қоңырау шалып, брондауды растайды.`)}</div>`;$("#bookForm").reset();return}
+    const text=["Бронь стола в «Милано»"+(LANG==="kk"?" (каз. версия)":""),`${d}, ${p.time}`,`Гостей: ${p.guests}`,`Повод: ${p.reason}`,`Имя: ${p.name}`,`Телефон: ${p.phone}`,p.note?`Пожелания: ${p.note}`:null].filter(Boolean).join("\n");
+    out.innerHTML=`<pre class="msg" id="bMsg">${esc(text)}</pre><div class="sendrow" style="margin-block:12px"><a class="btn" target="_blank" rel="noopener" href="${waHref(text)}">${L("Отправить в WhatsApp","WhatsApp-қа жіберу")}</a><button class="btn ghost" type="button" id="bCopy">${L("Скопировать","Көшіру")}</button></div><p class="hint" id="bHint">${L("Бронь подтверждается, когда администратор ответит.","Әкімші жауап бергенде брондау расталады.")}</p>`;
+    $("#bCopy").onclick=()=>copyText(text,$("#bMsg"),$("#bHint"));
+  });
+})();
+
+render();
+</script>
+</body>
+</html>
