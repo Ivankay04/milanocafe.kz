@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://milanocafe.kz/sitemap.xml
