@@ -2,6 +2,19 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114254297', 'ym');
+
+    ym(114254297, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114254297" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Кафе «Милано», Риддер — пицца из печи, обеды, доставка</title>
 <meta name="description" content="Кафе-пиццерия «Милано» в Риддере с 2005 года. Пицца из печи, обеды по будням, доставка по городу и бронь столов. 3-й микрорайон, 9.">
@@ -16,6 +29,7 @@
 <meta property="og:image" content="https://milanocafe.kz/assets/og.png">
 <meta property="og:locale" content="ru_RU">
 <meta name="theme-color" content="#1D3267">
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -148,7 +162,7 @@ section{padding-block:64px}
 @media (max-width:900px){.lunch .layout{grid-template-columns:1fr}.lunch .media{min-height:0;aspect-ratio:4/3}}
 @media (max-width:560px){.today{grid-template-columns:1fr}.today div{border-left:0;border-top:1px solid var(--line)}.today div:first-child{border-top:0}}
 
-.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin-bottom:22px;position:sticky;top:var(--head);z-index:15;background:var(--milk-2);scrollbar-width:none;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;padding:10px 0;margin-bottom:22px;position:sticky;top:var(--head);z-index:15;background:var(--milk-2);scrollbar-width:none;border-bottom:1px solid var(--line)}
 .tabs::-webkit-scrollbar{display:none}
 .tabs button{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 15px;font-size:13.5px;font-weight:500;cursor:pointer;white-space:nowrap}
 .tabs button[aria-pressed="true"]{background:var(--blue);color:var(--milk-2);border-color:var(--blue)}
@@ -462,7 +476,7 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--paper);borde
       <p><span>Оставьте заявку, администратор перезвонит и подтвердит бронь. На тот же вечер лучше позвонить:</span> <a href="#" id="bPhoneLink"></a>.</p>
       <div class="media" data-slot="table"></div>
     </div>
-    <form class="formcard" id="bookForm" novalidate>
+    <form class="formcard ym-hide-content ym-disable-keys" id="bookForm" novalidate>
       <div class="fields">
         <label class="f"><span>Имя</span><input id="bName" autocomplete="name" maxlength="60" required></label>
         <label class="f"><span>Телефон</span><input id="bPhone" type="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __" maxlength="20" required></label>
@@ -519,7 +533,7 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--paper);borde
 
 <div class="cartbar" id="cartbar" hidden><button class="btn" type="button" id="barBtn"><span id="barCount"></span><span id="barSum"></span></button></div>
 <div class="scrim" id="scrim" hidden></div>
-<aside class="panel" id="panel" hidden role="dialog" aria-modal="true">
+<aside class="panel ym-hide-content ym-disable-keys" id="panel" hidden role="dialog" aria-modal="true">
   <header><h3 id="panelTitle"></h3><button class="x" id="closeCart" type="button" aria-label="×">×</button></header>
   <div class="body" id="panelBody"></div>
 </aside>
@@ -545,6 +559,11 @@ const CONFIG = {
   bookingEndpoint: "https://milano-bot-production.up.railway.app/order",
   statusEndpoint: "https://milano-bot-production.up.railway.app/status"     // обед дня и стоп-лист, которые администраторы меняют командами в Telegram
 };
+
+/* ================== ЦЕЛИ ЯНДЕКС.МЕТРИКИ ================== */
+// В Метрике: Цели → Добавить цель → «JavaScript-событие» с этими идентификаторами
+const goal=n=>{try{ym(114254297,"reachGoal",n)}catch(e){}};
+document.addEventListener("click",e=>{const a=e.target.closest("a[href^='tel:']");if(a)goal("phone_click");const w=e.target.closest("a[href*='wa.me']");if(w)goal("whatsapp_click")});
 
 /* ================== ЯЗЫК ================== */
 const LANG = document.documentElement.lang === "kk" ? "kk" : "ru";
@@ -872,8 +891,20 @@ $("#setList").innerHTML=SETS.map(s=>`<article class="card"><div class="media ton
 $("#vids").innerHTML=VIDS.map((v,i)=>`<figure><div class="media tone-${i%2?"brown":"blue"}">${media({...v,icon:"play"})}</div><figcaption><b>${L(v.title[0],v.title[1])}</b><span>${L(v.text[0],v.text[1])}</span></figcaption></figure>`).join("");
 $("#gallery").innerHTML=HALL.map(h=>`<div class="media tone-${h.tone}">${media(h)}</div>`).join("");
 
-$("#tabs").addEventListener("click",e=>{const b=e.target.closest("button[data-cat]");if(!b)return;document.getElementById("cat-"+b.dataset.cat).scrollIntoView();setTab(b.dataset.cat)});
-function setTab(cat){document.querySelectorAll("#tabs button").forEach(x=>{const on=x.dataset.cat===cat;x.setAttribute("aria-pressed",on);if(on)x.scrollIntoView({block:"nearest",inline:"nearest"})})}
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest("button[data-cat]");if(!b)return;setTab(b.dataset.cat);document.getElementById("cat-"+b.dataset.cat).scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});
+// Подсветка категории при прокрутке. Полосу вкладок двигаем только по горизонтали, страницу не трогаем
+let curTab=null;
+function setTab(cat){
+  if(cat===curTab)return; curTab=cat;
+  const bar=$("#tabs");
+  bar.querySelectorAll("button").forEach(x=>{
+    const on=x.dataset.cat===cat; x.setAttribute("aria-pressed",on);
+    if(on&&bar.scrollWidth>bar.clientWidth){
+      const left=x.offsetLeft-(bar.clientWidth-x.offsetWidth)/2;
+      bar.scrollTo({left:Math.max(0,left),behavior:"smooth"});
+    }
+  });
+}
 
 /* Обед дня и стоп-лист с сервера (команды /obed и /stop в Telegram) */
 (async()=>{
@@ -909,7 +940,7 @@ function render(){
 }
 document.addEventListener("click",e=>{
   const inc=e.target.closest("[data-inc]"),dec=e.target.closest("[data-dec]");
-  if(inc){const id=inc.dataset.inc;cart[id]=(cart[id]||0)+1;save();render()}
+  if(inc){const id=inc.dataset.inc;if(!Object.keys(cart).length)goal("cart_add");cart[id]=(cart[id]||0)+1;save();render()}
   if(dec){const id=dec.dataset.dec;cart[id]--;if(cart[id]<=0)delete cart[id];save();render()}
 });
 
@@ -990,6 +1021,7 @@ function renderPanel(){
       if(err){$("#oErr").textContent=err;return}
       const btn=$("#oSubmit");btn.disabled=true;btn.textContent=L("Отправляем…","Жіберіп жатырмыз…");
       result=await send(CONFIG.orderEndpoint,orderPayload());
+      goal(result&&result.ok?"order_sent":"order_whatsapp");
       step="done";renderPanel();
     };
     return;
@@ -1078,6 +1110,7 @@ function copyText(text,el,hint){
     const r=await send(CONFIG.bookingEndpoint,p);
     btn.disabled=false;btn.textContent=label;
     const out=$("#bOut");out.hidden=false;
+    goal(r.ok?"booking_sent":"booking_whatsapp");
     if(r.ok){out.innerHTML=`<div class="okbox">${L(`Заявка № ${esc(r.number)} отправлена. Администратор перезвонит и подтвердит бронь.`,`№ ${esc(r.number)} өтінім жіберілді. Әкімші қоңырау шалып, брондауды растайды.`)}</div>`;$("#bookForm").reset();return}
     const text=["Бронь стола в «Милано»"+(LANG==="kk"?" (каз. версия)":""),`${d}, ${p.time}`,`Гостей: ${p.guests}`,`Повод: ${p.reason}`,`Имя: ${p.name}`,`Телефон: ${p.phone}`,p.note?`Пожелания: ${p.note}`:null].filter(Boolean).join("\n");
     out.innerHTML=`<pre class="msg" id="bMsg">${esc(text)}</pre><div class="sendrow" style="margin-block:12px"><a class="btn" target="_blank" rel="noopener" href="${waHref(text)}">${L("Отправить в WhatsApp","WhatsApp-қа жіберу")}</a><button class="btn ghost" type="button" id="bCopy">${L("Скопировать","Көшіру")}</button></div><p class="hint" id="bHint">${L("Бронь подтверждается, когда администратор ответит.","Әкімші жауап бергенде брондау расталады.")}</p>`;

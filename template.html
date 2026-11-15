@@ -29,6 +29,7 @@
 <meta property="og:image" content="https://{{DOMAIN}}/assets/og.png">
 <meta property="og:locale" content="{{OG_LOCALE}}">
 <meta name="theme-color" content="#1D3267">
+<link rel="icon" href="{{BASE}}favicon.ico" sizes="any">
 <link rel="icon" href="{{BASE}}assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{BASE}}assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -161,7 +162,7 @@ section{padding-block:64px}
 @media (max-width:900px){.lunch .layout{grid-template-columns:1fr}.lunch .media{min-height:0;aspect-ratio:4/3}}
 @media (max-width:560px){.today{grid-template-columns:1fr}.today div{border-left:0;border-top:1px solid var(--line)}.today div:first-child{border-top:0}}
 
-.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin-bottom:22px;position:sticky;top:var(--head);z-index:15;background:var(--milk-2);scrollbar-width:none;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;padding:10px 0;margin-bottom:22px;position:sticky;top:var(--head);z-index:15;background:var(--milk-2);scrollbar-width:none;border-bottom:1px solid var(--line)}
 .tabs::-webkit-scrollbar{display:none}
 .tabs button{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 15px;font-size:13.5px;font-weight:500;cursor:pointer;white-space:nowrap}
 .tabs button[aria-pressed="true"]{background:var(--blue);color:var(--milk-2);border-color:var(--blue)}
@@ -890,8 +891,20 @@ $("#setList").innerHTML=SETS.map(s=>`<article class="card"><div class="media ton
 $("#vids").innerHTML=VIDS.map((v,i)=>`<figure><div class="media tone-${i%2?"brown":"blue"}">${media({...v,icon:"play"})}</div><figcaption><b>${L(v.title[0],v.title[1])}</b><span>${L(v.text[0],v.text[1])}</span></figcaption></figure>`).join("");
 $("#gallery").innerHTML=HALL.map(h=>`<div class="media tone-${h.tone}">${media(h)}</div>`).join("");
 
-$("#tabs").addEventListener("click",e=>{const b=e.target.closest("button[data-cat]");if(!b)return;document.getElementById("cat-"+b.dataset.cat).scrollIntoView();setTab(b.dataset.cat)});
-function setTab(cat){document.querySelectorAll("#tabs button").forEach(x=>{const on=x.dataset.cat===cat;x.setAttribute("aria-pressed",on);if(on)x.scrollIntoView({block:"nearest",inline:"nearest"})})}
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest("button[data-cat]");if(!b)return;setTab(b.dataset.cat);document.getElementById("cat-"+b.dataset.cat).scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});
+// Подсветка категории при прокрутке. Полосу вкладок двигаем только по горизонтали, страницу не трогаем
+let curTab=null;
+function setTab(cat){
+  if(cat===curTab)return; curTab=cat;
+  const bar=$("#tabs");
+  bar.querySelectorAll("button").forEach(x=>{
+    const on=x.dataset.cat===cat; x.setAttribute("aria-pressed",on);
+    if(on&&bar.scrollWidth>bar.clientWidth){
+      const left=x.offsetLeft-(bar.clientWidth-x.offsetWidth)/2;
+      bar.scrollTo({left:Math.max(0,left),behavior:"smooth"});
+    }
+  });
+}
 
 /* Обед дня и стоп-лист с сервера (команды /obed и /stop в Telegram) */
 (async()=>{
