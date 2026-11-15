@@ -552,7 +552,7 @@ const CONFIG = {
   hours: {ru:"Ежедневно 10:00–23:00<br>Обеды: пн–пт 12:00–15:00", kk:"Күн сайын 10:00–23:00<br>Түскі ас: дс–жм 12:00–15:00"},
   open: "10:00", lastOrder: "22:30",
   yandexMap: "https://yandex.kz/maps/29498/ridder/house/3_shi_shaghyn_audan_9/bEoYcg5oQUQOQFtqfX9zeH5ibA==/",
-  legal: "ИП [название], ИИН [номер]",
+  legal: {ru:"ИП Кайгородов · ИИН 040204551300 · Юр. адрес: г. Риддер, пр. Независимости, 27, офис 2", kk:"ЖК Кайгородов · ЖСН 040204551300 · Заңды мекенжайы: Риддер қ., Тәуелсіздік даңғылы, 27, 2-кеңсе"},
   minOrder: 3000, deliveryFee: 500, freeFrom: 7000,
   courierCard: false,               // true, когда у курьера появится терминал
   orderEndpoint: "https://milano-bot-production.up.railway.app/order",      // сервер на Railway; пусто — заказ уходит готовым сообщением в WhatsApp
@@ -834,7 +834,7 @@ $("#cPhone").textContent=CONFIG.phone;$("#cPhone").href=phoneHref;$("#fPhone").t
 $("#bPhoneLink").textContent=CONFIG.phone;$("#bPhoneLink").href=phoneHref;
 $("#cWa").href=waHref("");$("#cHours").innerHTML=CONFIG.hours[LANG];
 $("#cIg").textContent="@"+CONFIG.instagram;$("#cIg").href=$("#fIg").href="https://instagram.com/"+CONFIG.instagram;
-$("#mLink").href=CONFIG.yandexMap;$("#fLegal").textContent=CONFIG.legal;
+$("#mLink").href=CONFIG.yandexMap;$("#fLegal").textContent=CONFIG.legal[LANG];
 $("#payStep").textContent=CONFIG.courierCard
   ?L("Счёт в Kaspi, картой курьеру или наличными при получении.","Kaspi шоты, курьерге картамен немесе алған кезде қолма-қол.")
   :L("Счёт в Kaspi после подтверждения или наличными при получении.","Растаудан кейін Kaspi шоты немесе алған кезде қолма-қол.");
