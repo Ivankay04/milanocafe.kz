@@ -159,6 +159,18 @@ section{padding-block:64px}
 .combo p{grid-column:1;color:var(--muted);font-size:13.5px}
 .combo .side{grid-row:1/3;grid-column:2;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .lunchnote{font-size:13px;color:var(--muted);margin-top:14px}
+.packnote{font-size:13px;color:var(--muted);margin-top:22px;max-width:760px}
+.price.lp{text-align:right}
+.price.lp small{font-size:11px}
+.btn.small[disabled]{opacity:.55;cursor:not-allowed}
+.offhours{font-size:11.5px;color:var(--muted);text-align:right;line-height:1.25;max-width:120px}
+.sum details{font-size:13px;color:var(--muted)}
+.sum details summary{display:flex;justify-content:space-between;cursor:pointer;color:var(--ink);font-size:14px;list-style:none}
+.sum details summary::-webkit-details-marker{display:none}
+.sum details summary span:first-child::after{content:" ▾";font-size:11px;color:var(--muted)}
+.sum details div{padding-left:10px}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px;cursor:pointer}
+.chk input{width:18px;height:18px;accent-color:var(--blue)}
 @media (max-width:900px){.lunch .layout{grid-template-columns:1fr}.lunch .media{min-height:0;aspect-ratio:4/3}}
 @media (max-width:560px){.today{grid-template-columns:1fr}.today div{border-left:0;border-top:1px solid var(--line)}.today div:first-child{border-top:0}}
 
@@ -380,6 +392,19 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--paper);borde
   </div>
 </div>
 
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sechead">
+      <div><div class="eyebrow" data-kk='Мәзір'>Меню</div><h2 data-kk='Таңдаңыз, біз жеткіземіз'>Выбирайте, мы привезём</h2></div>
+      <p data-kk='Екінші тағамдарға гарнир бөлек тапсырыс беріледі. Бағасы залдағыдай.'>Гарнир ко вторым блюдам заказывается отдельно. Цены те же, что в зале.</p>
+    </div>
+    <div class="tabs" id="tabs" role="toolbar"></div>
+    <div id="menuList"></div>
+    <p class="packnote" data-kk='Өзімен алып кету және жеткізу кезінде қаптама құны қосылады: пицца — 150 тг, сорпалар мен ыстық тағамдар — 100 тг, салаттар мен тіскебасарлар — 80 тг, сусындар — 50 тг. Риддер бойынша жеткізу — 600 тг, 7 000 тг-ден бастап — тегін.'>При заказе с собой и на доставку добавляется стоимость упаковки: пицца — 150 тг, супы и горячее — 100 тг, салаты и закуски — 80 тг, напитки — 50 тг. Доставка по Риддеру — 600 тг, при заказе от 7 000 тг — бесплатно.</p>
+  </div>
+</section>
+
 <section class="lunch" id="lunch">
   <div class="wrap">
     <div class="sechead">
@@ -391,20 +416,9 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--paper);borde
       <div>
         <div class="today" id="today"></div>
         <div class="combos" id="combos"></div>
-        <p class="lunchnote" data-kk='Кеңсеге түскі ас: тапсырыс 11:00-ге дейін, 12:00–14:00 аралығында жеткіземіз. 3 түскі астан бастап жеткізу тегін.'>Обеды в офис: заказ до 11:00, привозим с 12:00 до 14:00. От 3 обедов доставка бесплатная.</p>
+        <p class="lunchnote" data-kk='Түскі ас жұмыс күндері 12:00-ден 15:00-ге дейін. Өзімен алып кету және жеткізу бағасына қаптама кіреді. 3 түскі астан бастап жеткізу тегін. Кеңсеге: тапсырыс 11:00-ге дейін, 12:00–14:00 аралығында жеткіземіз.'>Обеды по будням с 12:00 до 15:00. Цена с собой и с доставкой уже включает упаковку. Доставка бесплатно от 3 обедов. В офис: заказ до 11:00, привозим с 12:00 до 14:00.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="menu">
-  <div class="wrap">
-    <div class="sechead">
-      <div><div class="eyebrow" data-kk='Мәзір'>Меню</div><h2 data-kk='Таңдаңыз, біз жеткіземіз'>Выбирайте, мы привезём</h2></div>
-      <p data-kk='Екінші тағамдарға гарнир бөлек тапсырыс беріледі. Құймақты тек залда ұсынамыз: жолда дәмі кетеді.'>Гарнир ко вторым блюдам заказывается отдельно. Блины готовим только для зала: в дороге они теряют вкус.</p>
-    </div>
-    <div class="tabs" id="tabs" role="toolbar"></div>
-    <div id="menuList"></div>
   </div>
 </section>
 
@@ -412,7 +426,7 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--paper);borde
   <div class="wrap">
     <div class="sechead">
       <div><div class="eyebrow" data-kk='Жеткізуге арналған'>Для доставки</div><h2 data-kk='Жиынтықтар'>Наборы</h2></div>
-      <p data-kk='Жиынтыққа пиццаларды өзіңіз таңдайсыз: атауларын тапсырыстағы түсініктемеге жазыңыз.'>Пиццы в набор выбираете сами: напишите названия в комментарии к заказу.</p>
+      <p data-kk='Жиынтыққа пиццаларды өзіңіз таңдайсыз: атауларын тапсырыстағы түсініктемеге жазыңыз. Қаптама бағасына кірген.'>Пиццы в набор выбираете сами: напишите названия в комментарии к заказу. Упаковка уже в цене.</p>
     </div>
     <div class="grid" id="setList"></div>
   </div>
@@ -553,7 +567,11 @@ const CONFIG = {
   open: "09:00", lastOrder: "19:30",
   yandexMap: "https://yandex.kz/maps/29498/ridder/house/3_shi_shaghyn_audan_9/bEoYcg5oQUQOQFtqfX9zeH5ibA==/",
   legal: {ru:"ИП Кайгородов · ИИН 040204551300 · Юр. адрес: г. Риддер, пр. Независимости, 27, офис 2", kk:"ЖК Кайгородов · ЖСН 040204551300 · Заңды мекенжайы: Риддер қ., Тәуелсіздік даңғылы, 27, 2-кеңсе"},
-  minOrder: 3000, deliveryFee: 500, freeFrom: 7000,
+  minOrder: 3000, deliveryFee: 600, freeFrom: 7000,   // доставка по Риддеру; бесплатно от суммы блюд (без упаковки)
+  lunchFreeFrom: 3,                 // бесплатная доставка от стольких обедов в заказе
+  breakfast: ["09:00","12:00"],     // завтраки заказываются только в это время
+  // упаковка за 1 шт. при заказе с собой и на доставку; обеды и наборы — уже в цене
+  pack: {pizza:150, soup:100, hot:100, side:100, blini:100, kids:100, breakfast:100, salad:80, snack:80, dessert:80, drinks:50},
   courierCard: false,               // true, когда у курьера появится терминал
   orderEndpoint: "{{ORDER_URL}}",      // сервер на Railway; пусто — заказ уходит готовым сообщением в WhatsApp
   bookingEndpoint: "{{ORDER_URL}}",
@@ -573,17 +591,17 @@ const BASE = "{{BASE}}";
 /* ================== МЕНЮ ================== */
 // [код категории, название, подпись, префикс кода фото, правило съёмки, название kk, подпись kk]
 const CATS = [
-  ["breakfast","Завтраки","с 9:00 до 12:00","Зв","под 45°, на тарелке","Таңғы ас","9:00-ден 12:00-ге дейін"],
+  ["breakfast","Завтраки","с 9:00 до 12:00, в зале, с собой и с доставкой","Зв","под 45°, на тарелке","Таңғы ас","9:00-ден 12:00-ге дейін, залда, өзімен алып кетуге және жеткізумен"],
   ["pizza","Пицца","30 см, около 650 г","П","строго сверху, на дереве","Пицца","30 см, шамамен 650 г"],
   ["salad","Салаты","около 150 г","С",null,"Салаттар","шамамен 150 г"],
-  ["soup","Первые блюда","","Су",null,"Бірінші тағамдар",""],
+  ["soup","Супы","","Су",null,"Сорпалар",""],
   ["hot","Вторые блюда","с салатом из капусты и горошком, гарнир отдельно","Г","под 45°, на тарелке","Екінші тағамдар","қырыққабат салаты мен бұршақпен, гарнир бөлек"],
   ["side","Гарниры","с салатом из капусты, кетчупом и майонезом","Гр",null,"Гарнирлер","қырыққабат салаты, кетчуп және майонезбен"],
   ["snack","Закуски","","З","под 45°, с соусом","Тіскебасарлар",""],
-  ["blini","Блины","по 2 шт., только в зале","Б",null,"Құймақтар","2 данадан, тек залда"],
+  ["blini","Блины","по 2 шт.","Б",null,"Құймақтар","2 данадан"],
   ["dessert","Десерты","","Д",null,"Десерттер",""],
   ["kids","Детское","","Де","сверху, с «лицом»","Балаларға",""],
-  ["drinks","Напитки","напитки в бутылках — в кафе","Н",null,"Сусындар","бөтелкедегі сусындар — кафеде"]
+  ["drinks","Напитки","","Н",null,"Сусындар",""]
 ];
 // [категория, название, состав, выход, цена, метка, только в зале]
 const M = [
@@ -670,15 +688,15 @@ const M = [
  ["snack","Сырные шарики","сырные шарики, кетчуп","150 г",1700],
  ["snack","Картофель фри большой","картофель фри, кетчуп","200 г",900],
  ["snack","Сырная тарелка","качкавал копчёный, сулугуни, брынза, сыр, орех грецкий, мёд","200 г",2750],
- ["blini","Блины с маслом","блины, сливочное масло","2 шт.",650,"",1],
- ["blini","Блины со сметаной","блины, сметана","2 шт.",600,"",1],
- ["blini","Блины с повидлом","блины, джем","2 шт.",600,"",1],
- ["blini","Блины со сгущёнкой","блины, сгущёнка","2 шт.",600,"",1],
- ["blini","Блины с мороженым","блины, пломбир, джем","2 шт.",850,"",1],
- ["blini","Блины с сыром","блины, сыр, сливочное масло","2 шт.",950,"",1],
- ["blini","Блины с ветчиной и сыром","блины, ветчина, сыр, сливочное масло","2 шт.",1200,"",1],
- ["blini","Блины с курицей","блины, курица отварная, грибы жареные, помидоры, сливочное масло","2 шт.",1200,"",1],
- ["blini","Блины с рыбой","блины, яйцо, сыр, лосось, сливочное масло","2 шт.",1350,"",1],
+ ["blini","Блины с маслом","блины, сливочное масло","2 шт.",650],
+ ["blini","Блины со сметаной","блины, сметана","2 шт.",600],
+ ["blini","Блины с повидлом","блины, джем","2 шт.",600],
+ ["blini","Блины со сгущёнкой","блины, сгущёнка","2 шт.",600],
+ ["blini","Блины с мороженым","блины, пломбир, джем","2 шт.",850],
+ ["blini","Блины с сыром","блины, сыр, сливочное масло","2 шт.",950],
+ ["blini","Блины с ветчиной и сыром","блины, ветчина, сыр, сливочное масло","2 шт.",1200],
+ ["blini","Блины с курицей","блины, курица отварная, грибы жареные, помидоры, сливочное масло","2 шт.",1200],
+ ["blini","Блины с рыбой","блины, яйцо, сыр, лосось, сливочное масло","2 шт.",1350],
  ["dessert","Мороженое","пломбир ванильный, шоколадный, клубничный, поливка на выбор, тёртый орех","3 шарика",1400],
  ["kids","«Чебурашка»","куриные котлетки, пюре, огурцы свежие, помидоры, кетчуп","2 котлетки + пюре",1300],
  ["kids","«Двойняшки»","куриные котлетки, картофель фри, кетчуп","2 котлетки + фри",1300],
@@ -805,9 +823,9 @@ const KK_UNIT = {"2 шт.": "2 дана", "3 шт.": "3 дана", "3 шарик
 const KK_TAG = {"фирменная": "фирмалық", "фирменный": "фирмалық"};
 
 const COMBOS = [
- {id:"c1",name:"Обед «Лёгкий»",kk:"«Жеңіл» түскі ас",desc:"суп дня 250 мл, салат дня, хлеб, морс или чай",dkk:"күн сорпасы 250 мл, күн салаты, нан, морс немесе шай",price:1200},
- {id:"c2",name:"Обед «Сытный»",kk:"«Тойымды» түскі ас",desc:"суп дня, горячее дня с гарниром, салат дня, хлеб, морс или чай",dkk:"күн сорпасы, гарнирі бар күннің ыстық тағамы, күн салаты, нан, морс немесе шай",price:2200},
- {id:"c3",name:"Пицца-ланч",kk:"Пицца-ланч",desc:"пицца 25 см (Домашняя, С колбасой, Особая или Миланская), суп или салат дня, напиток",dkk:"25 см пицца (Үй пиццасы, Шұжықты, Ерекше немесе Миланская), күн сорпасы немесе салаты, сусын",price:2200}
+ {id:"c1",name:"Обед «Лёгкий»",kk:"«Жеңіл» түскі ас",desc:"суп дня 250 мл, салат дня, хлеб, морс или чай",dkk:"күн сорпасы 250 мл, күн салаты, нан, морс немесе шай",hallPrice:1200,price:1500},
+ {id:"c2",name:"Обед «Сытный»",kk:"«Тойымды» түскі ас",desc:"суп дня, горячее дня с гарниром, салат дня, хлеб, морс или чай",dkk:"күн сорпасы, гарнирі бар күннің ыстық тағамы, күн салаты, нан, морс немесе шай",hallPrice:2200,price:2500},
+ {id:"c3",name:"Пицца-ланч",kk:"Пицца-ланч",desc:"пицца 25 см (Домашняя, С колбасой, Особая или Миланская), суп или салат дня, напиток",dkk:"25 см пицца (Үй пиццасы, Шұжықты, Ерекше немесе Миланская), күн сорпасы немесе салаты, сусын",hallPrice:2200,price:2400}
 ];
 const SETS = [
  {id:"s1",name:"На двоих",kk:"Екеуге",desc:"пицца 30 см на выбор, салат Царский, 2 морса",dkk:"таңдауыңызша 30 см пицца, Патша салаты, 2 морс",price:4200},
@@ -909,7 +927,7 @@ const ITEMS=M.map((r,i)=>{
     tag:r[5]?L(r[5],KK_TAG[r[5]]||r[5]):"",hall:!!r[6],
     img:lat(cat[1])+"-"+lat(r[1])+".jpg",code:"Фото "+cat[3]+"-"+String(counters[r[0]]).padStart(2,"0")};
 });
-COMBOS.forEach(c=>{c.ru=c.name;c.name=L(c.name,c.kk);c.desc=L(c.desc,c.dkk)});
+COMBOS.forEach(c=>{c.lunch=true;c.ru=c.name;c.name=L(c.name,c.kk);c.desc=L(c.desc,c.dkk)});
 SETS.forEach(c=>{c.ru=c.name;c.name=L(c.name,c.kk);c.desc=L(c.desc,c.dkk)});
 const ALL={};[...ITEMS,...COMBOS,...SETS].forEach(x=>ALL[x.id]=x);
 let STOP=[];   // стоп-лист на сегодня (из Telegram)
@@ -937,7 +955,8 @@ $("#payStep").textContent=CONFIG.courierCard
   :L("Счёт в Kaspi после подтверждения или наличными при получении.","Растаудан кейін Kaspi шоты немесе алған кезде қолма-қол.");
 $("#terms").innerHTML=[
   L(`Минимальный заказ на доставку ${fmt(CONFIG.minOrder)}`,`Жеткізуге ең аз тапсырыс ${fmt(CONFIG.minOrder)}`),
-  L(`Доставка ${fmt(CONFIG.deliveryFee)}, от ${fmt(CONFIG.freeFrom)} бесплатно`,`Жеткізу ${fmt(CONFIG.deliveryFee)}, ${fmt(CONFIG.freeFrom)} бастап тегін`),
+  L(`Доставка ${fmt(CONFIG.deliveryFee)}, от ${fmt(CONFIG.freeFrom)} или от ${CONFIG.lunchFreeFrom} обедов бесплатно`,`Жеткізу ${fmt(CONFIG.deliveryFee)}, ${fmt(CONFIG.freeFrom)} немесе ${CONFIG.lunchFreeFrom} түскі астан бастап тегін`),
+  L("Упаковка с собой и на доставку — отдельной строкой","Өзімен алу мен жеткізуде қаптама бөлек есептеледі"),
   L(`Заказы принимаем до ${CONFIG.lastOrder}`,`Тапсырыстарды ${CONFIG.lastOrder} дейін қабылдаймыз`),
   L(`Самовывоз: ${ADDR}`,`Өзі алып кету: ${ADDR}`)].map(t=>`<span>${t}</span>`).join("");
 const PAY=[
@@ -958,7 +977,7 @@ function renderLunch(){
   $("#today").innerHTML=lab.map((x,i)=>`<div><small>${x}</small><b>${esc(w[i]||"—")}</b></div>`).join("");
 }
 renderLunch();
-$("#combos").innerHTML=COMBOS.map(c=>`<div class="combo"><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><div class="side"><span class="price">${fmt(c.price)}</span><span data-ctl="${c.id}"></span></div></div>`).join("");
+$("#combos").innerHTML=COMBOS.map(c=>`<div class="combo"><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><div class="side"><span class="price lp"><small>${L("в зале","залда")} ${fmt(c.hallPrice)}</small>${fmt(c.price)}<small>${L("с собой и доставка","өзімен және жеткізу")}</small></span><span data-ctl="${c.id}"></span></div></div>`).join("");
 
 /* Меню */
 $("#tabs").setAttribute("aria-label",L("Категории меню","Мәзір санаттары"));
@@ -1018,11 +1037,16 @@ function setTab(cat){
 })();
 
 /* ================== КОРЗИНА ================== */
+const hm=s=>{const[a,b]=s.split(":").map(Number);return a*60+b};
 let cart={};
 try{const s=JSON.parse(localStorage.getItem("milano-cart")||"{}");for(const k in s)if(ALL[k]&&!ALL[k].hall)cart[k]=s[k];}catch(e){}
 const save=()=>{try{localStorage.setItem("milano-cart",JSON.stringify(cart))}catch(e){}};
+const nowMin=()=>{const d=new Date();return d.getHours()*60+d.getMinutes()};
+const breakfastNow=()=>nowMin()>=hm(CONFIG.breakfast[0])&&nowMin()<hm(CONFIG.breakfast[1]);
+const BF_HOURS=L("завтраки с 9:00 до 12:00","таңғы ас 9:00-ден 12:00-ге дейін");
 function ctlHTML(id){
   const q=cart[id]||0;
+  if(!q&&ALL[id].cat==="breakfast"&&!breakfastNow())return `<button class="btn small" type="button" disabled title="${BF_HOURS}">${L("с 9:00 до 12:00","9:00–12:00")}</button>`;
   return q?`<span class="qty"><button type="button" data-dec="${id}" aria-label="−">−</button><span>${q}</span><button type="button" data-inc="${id}" aria-label="+">+</button></span>`
           :`<button class="btn small" type="button" data-inc="${id}">${L("В корзину","Себетке")}</button>`;
 }
@@ -1037,7 +1061,7 @@ function render(){
 }
 document.addEventListener("click",e=>{
   const inc=e.target.closest("[data-inc]"),dec=e.target.closest("[data-dec]");
-  if(inc){const id=inc.dataset.inc;if(!Object.keys(cart).length)goal("cart_add");cart[id]=(cart[id]||0)+1;save();render()}
+  if(inc){const id=inc.dataset.inc;if(!cart[id]&&ALL[id].cat==="breakfast"&&!breakfastNow())return;if(!Object.keys(cart).length)goal("cart_add");cart[id]=(cart[id]||0)+1;save();render()}
   if(dec){const id=dec.dataset.dec;cart[id]--;if(cart[id]<=0)delete cart[id];save();render()}
 });
 
@@ -1049,9 +1073,15 @@ $("#openCart").onclick=openPanel;$("#barBtn").onclick=openPanel;$("#closeCart").
 $("#panel").setAttribute("aria-label",L("Корзина","Себет"));
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#panel").hidden)closePanel()});
 
-function calc(){const{s}=totals();const fee=draft.mode==="pickup"||s>=CONFIG.freeFrom?0:CONFIG.deliveryFee;return{s,fee,total:s+fee}}
+// Упаковка: по позициям × количество (с собой и доставка). Обеды и наборы — уже в цене
+const PACK_NAMES={pizza:["Пицца","Пицца"],soup:["Супы","Сорпалар"],hot:["Вторые блюда","Екінші тағамдар"],side:["Гарниры","Гарнирлер"],blini:["Блины","Құймақтар"],kids:["Детское","Балаларға"],breakfast:["Завтраки","Таңғы ас"],salad:["Салаты","Салаттар"],snack:["Закуски","Тіскебасарлар"],dessert:["Десерты","Десерттер"],drinks:["Напитки","Сусындар"]};
+function packLines(){const g={};for(const k in cart){const c=ALL[k].cat,u=c&&CONFIG.pack[c]||0;if(!u)continue;g[c]=g[c]||{q:0,u};g[c].q+=cart[k]}
+  return Object.keys(g).map(c=>({cat:c,ru:PACK_NAMES[c][0],name:L(...PACK_NAMES[c]),q:g[c].q,u:g[c].u,sum:g[c].q*g[c].u}))}
+function lunchCount(){let n=0;for(const k in cart)if(ALL[k].lunch)n+=cart[k];return n}
+function calc(){const{s}=totals();const pl=packLines(),pack=pl.reduce((a,x)=>a+x.sum,0),ln=lunchCount();
+  const free=s>=CONFIG.freeFrom||ln>=CONFIG.lunchFreeFrom;
+  const fee=draft.mode==="pickup"||free?0:CONFIG.deliveryFee;return{s,pack,pl,fee,ln,total:s+pack+fee}}
 function localISO(d){const z=n=>String(n).padStart(2,"0");return`${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`}
-const hm=s=>{const[a,b]=s.split(":").map(Number);return a*60+b};
 function canAsap(){if(beforeOpen())return false;const d=new Date(),m=d.getHours()*60+d.getMinutes();return m>=hm(CONFIG.open)&&m<=hm(CONFIG.lastOrder)}
 
 function renderPanel(){
@@ -1059,7 +1089,8 @@ function renderPanel(){
   $("#panelTitle").textContent=step==="cart"?L("Ваш заказ","Сіздің тапсырысыңыз"):step==="form"?L("Оформление","Рәсімдеу"):L("Заказ","Тапсырыс");
   if(!ids.length&&step!=="done"){body.innerHTML=`<p class="empty">${L("Корзина пустая.<br>Добавьте блюда из меню.","Себет бос.<br>Мәзірден тағам қосыңыз.")}</p>`;return}
   if(step==="cart"){
-    const{s,fee,total}=calc();const short=draft.mode==="delivery"&&s<CONFIG.minOrder;
+    const{s,pack,pl,fee,ln,total}=calc();const short=draft.mode==="delivery"&&s<CONFIG.minOrder;
+    const freeHint=fee?L(`До бесплатной доставки осталось ${fmt(CONFIG.freeFrom-s)}`,`Тегін жеткізуге дейін ${fmt(CONFIG.freeFrom-s)} қалды`)+(ln?L(` или ещё ${CONFIG.lunchFreeFrom-ln} ${CONFIG.lunchFreeFrom-ln===1?"обед":"обеда"}.`,` немесе тағы ${CONFIG.lunchFreeFrom-ln} түскі ас.`):"."):L("Доставка бесплатная.","Жеткізу тегін.");
     const closedNote=beforeOpen()
       ?L(`Кафе открывается ${dayMonth(OPEN_AT)}. Оформите заказ ко времени, начиная с этого дня.`,`Кафе ${dayMonth(OPEN_AT)} ашылады. Тапсырысты сол күннен бастап белгілі уақытқа рәсімдеңіз.`)
       :(!canAsap()?L("Сейчас кухня закрыта. Оформите заказ ко времени — приготовим, когда откроемся.","Қазір ас үй жабық. Тапсырысты белгілі уақытқа рәсімдеңіз, ашылғанда дайындаймыз."):"");
@@ -1070,12 +1101,16 @@ function renderPanel(){
         <label><input type="radio" name="mode" value="pickup" ${draft.mode==="pickup"?"checked":""}>${L("Самовывоз","Өзі алып кету")}</label>
       </div>
       <div class="sum"><div><span>${L("Блюда","Тағамдар")}</span><span>${fmt(s)}</span></div>
+        ${pack?`<details><summary><span>${L("Упаковка","Қаптама")}</span><span>${fmt(pack)}</span></summary>${pl.map(x=>`<div>${esc(x.name)}: ${x.q} × ${fmt(x.u)} = ${fmt(x.sum)}</div>`).join("")}</details>`:""}
         ${draft.mode==="delivery"?`<div><span>${L("Доставка","Жеткізу")}</span><span>${fee?fmt(fee):L("бесплатно","тегін")}</span></div>`:""}
         <div class="total"><span>${L("Итого","Барлығы")}</span><span>${fmt(total)}</span></div></div>
-      ${draft.mode==="delivery"?`<p class="hint ${short?"warn":""}">${short?L(`Минимальный заказ на доставку ${fmt(CONFIG.minOrder)}. Добавьте ещё на ${fmt(CONFIG.minOrder-s)}.`,`Жеткізуге ең аз тапсырыс ${fmt(CONFIG.minOrder)}. Тағы ${fmt(CONFIG.minOrder-s)} қосыңыз.`):(fee?L(`До бесплатной доставки ${fmt(CONFIG.freeFrom-s)}.`,`Тегін жеткізуге дейін ${fmt(CONFIG.freeFrom-s)}.`):L("Доставка бесплатная.","Жеткізу тегін."))}</p>`:`<p class="hint">${L("Заберите заказ в кафе: ","Тапсырысты кафеден алып кетіңіз: ")}${esc(ADDR)}.</p>`}
+      ${draft.mode==="delivery"?`<p class="hint ${short?"warn":""}">${short?L(`Минимальный заказ на доставку ${fmt(CONFIG.minOrder)}. Добавьте ещё на ${fmt(CONFIG.minOrder-s)}.`,`Жеткізуге ең аз тапсырыс ${fmt(CONFIG.minOrder)}. Тағы ${fmt(CONFIG.minOrder-s)} қосыңыз.`):freeHint}</p>`:`<p class="hint">${L("Заберите заказ в кафе: ","Тапсырысты кафеден алып кетіңіз: ")}${esc(ADDR)}.</p>`}
       ${closedNote?`<p class="hint warn">${closedNote}</p>`:""}
+      <label class="chk"><input type="checkbox" id="cutlery" ${draft.cutlery?"checked":""}>${L("Нужны приборы (бесплатно)","Асхана құралдары керек (тегін)")}</label>
+      <p class="hint">${L("Цены блюд те же, что в зале. Упаковка: пицца — 150 тг, супы и горячее — 100 тг, салаты и закуски — 80 тг, напитки — 50 тг; в обедах и наборах уже учтена.","Тағам бағасы залдағыдай. Қаптама: пицца — 150 тг, сорпалар мен ыстық тағамдар — 100 тг, салаттар мен тіскебасарлар — 80 тг, сусындар — 50 тг; түскі ас пен жиынтықтарда ескерілген.")}</p>
       <button class="btn" type="button" id="toForm" ${short?"disabled":""}>${L("Оформить заказ","Тапсырысты рәсімдеу")}</button>`;
     body.querySelectorAll("input[name=mode]").forEach(r=>r.onchange=()=>{draft.mode=r.value;renderPanel()});
+    $("#cutlery").onchange=e=>{draft.cutlery=e.target.checked};
     $("#toForm").onclick=()=>{if(!canAsap())draft.whenMode="time";step="form";renderPanel()};
     return;
   }
@@ -1115,6 +1150,9 @@ function renderPanel(){
         else if(hm(draft.time)<hm(CONFIG.open)||hm(draft.time)>hm(CONFIG.lastOrder))err=L(`Принимаем заказы на время с ${CONFIG.open} до ${CONFIG.lastOrder}.`,`Тапсырыстарды ${CONFIG.open} мен ${CONFIG.lastOrder} аралығына қабылдаймыз.`);
         else if(draft.date<minDate||new Date(draft.date+"T"+draft.time)<new Date(Date.now()+45*60000))err=L("Выберите время хотя бы через 45 минут.","Кемінде 45 минуттан кейінгі уақытты таңдаңыз.");
       }
+      const hasBf=Object.keys(cart).some(k=>ALL[k].cat==="breakfast");
+      if(!err&&hasBf){const tm=draft.whenMode==="time"?hm(draft.time||"00:00"):nowMin();
+        if(tm<hm(CONFIG.breakfast[0])||tm>=hm(CONFIG.breakfast[1]))err=L("Завтраки готовим с 9:00 до 12:00. Выберите время до 12:00 или уберите завтраки из корзины.","Таңғы асты 9:00-ден 12:00-ге дейін дайындаймыз. 12:00-ге дейінгі уақытты таңдаңыз немесе таңғы асты себеттен алып тастаңыз.")}
       if(err){$("#oErr").textContent=err;return}
       const btn=$("#oSubmit");btn.disabled=true;btn.textContent=L("Отправляем…","Жіберіп жатырмыз…");
       result=await send(CONFIG.orderEndpoint,orderPayload());
@@ -1160,10 +1198,10 @@ function whenText(){
   return d.getDate()+" "+MONTHS_RU[d.getMonth()]+", "+draft.time;
 }
 function orderPayload(){
-  const{s,fee,total}=calc();const del=draft.mode==="delivery";
+  const{s,pack,pl,fee,total}=calc();const del=draft.mode==="delivery";
   return{type:"order",lang:LANG,mode:del?"Доставка":"Самовывоз",
     items:Object.keys(cart).map(id=>({name:ALL[id].ru||ALL[id].name,qty:cart[id],price:ALL[id].price})),
-    sum:s,fee:del?fee:0,total,name:draft.name,phone:draft.phone,
+    sum:s,pack,packLines:pl.map(x=>({name:x.ru,qty:x.q,price:x.u})),fee:del?fee:0,total,cutlery:!!draft.cutlery,name:draft.name,phone:draft.phone,
     address:del?[draft.addr,draft.entr].filter(Boolean).join(", "):"",
     when:whenText(),pay:draft.pay,note:draft.note||"",hp:draft.hp||""};
 }
@@ -1171,7 +1209,8 @@ function orderText(){
   const p=orderPayload();
   return["Заказ с сайта «Милано»"+(LANG==="kk"?" (каз. версия)":""),p.mode,"",
     ...p.items.map(i=>`• ${i.name} × ${i.qty} = ${fmt(i.price*i.qty)}`),"",
-    `Блюда: ${fmt(p.sum)}`,p.mode==="Доставка"?`Доставка: ${p.fee?fmt(p.fee):"бесплатно"}`:null,`Итого: ${fmt(p.total)}`,"",
+    `Блюда: ${fmt(p.sum)}`,p.pack?`Упаковка: ${fmt(p.pack)} (${p.packLines.map(x=>`${x.name.toLowerCase()} ${x.qty} × ${x.price}`).join(", ")})`:null,
+    p.mode==="Доставка"?`Доставка: ${p.fee?fmt(p.fee):"бесплатно"}`:null,`Итого: ${fmt(p.total)}`,`Приборы: ${p.cutlery?"нужны":"не нужны"}`,"",
     `Имя: ${p.name}`,`Телефон: ${p.phone}`,p.address?`Адрес: ${p.address}`:null,
     `Когда: ${p.when}`,`Оплата: ${p.pay}`,p.note?`Комментарий: ${p.note}`:null
   ].filter(x=>x!==null).join("\n");
